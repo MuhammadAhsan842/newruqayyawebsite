@@ -9,7 +9,7 @@ import {
 } from "@/lib/hospital";
 import { photos } from "@/lib/photos";
 import { FacilityImage } from "@/components/facility-image";
-import { DoctorPortrait } from "@/components/doctor-portrait";
+import { DoctorCard } from "@/components/doctor-card";
 import { HafizMedicos } from "@/components/hafiz-medicos";
 import { DigitalXray } from "@/components/digital-xray";
 import { LabPartnership } from "@/components/lab-partnership";
@@ -35,6 +35,14 @@ export default function Home() {
             sizes="(max-width: 1024px) 100vw, 50vw"
             objectPosition="center"
           />
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/70 to-transparent px-5 py-5">
+            <p className="text-[11px] font-semibold tracking-[0.2em] text-gold uppercase">
+              Sutlej Avenue after dark
+            </p>
+            <p className="mt-1 font-heading text-lg text-white">
+              Ruqayya Clinic · Digital X-ray · Hafiz Medicos
+            </p>
+          </div>
         </div>
         <div className="order-2 flex flex-col justify-center bg-cream px-4 py-12 lg:order-1 lg:px-12 xl:px-16">
           <p className="text-xs font-semibold tracking-[0.22em] text-gold-foreground uppercase">
@@ -77,6 +85,18 @@ export default function Home() {
             </a>{" "}
             · {hospital.address.line1}
           </p>
+          <ul className="mt-6 flex flex-wrap gap-2 text-xs font-medium text-primary">
+            {["24/7 emergency", "Named consultants", "Digital X-ray", "Chughtai Lab", "Hafiz Medicos"].map(
+              (chip) => (
+                <li
+                  key={chip}
+                  className="rounded-full bg-primary/8 px-3 py-1 ring-1 ring-primary/15"
+                >
+                  {chip}
+                </li>
+              )
+            )}
+          </ul>
         </div>
       </section>
 
@@ -222,7 +242,18 @@ export default function Home() {
             </Link>
           </div>
           <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((s) => (
+            {services
+              .filter((s) =>
+                [
+                  "emergency",
+                  "surgery",
+                  "orthopedics",
+                  "gynecology",
+                  "diagnostics",
+                  "pharmacy",
+                ].includes(s.slug)
+              )
+              .map((s) => (
               <Link
                 key={s.slug}
                 href={`/services/${s.slug}`}
@@ -249,24 +280,8 @@ export default function Home() {
           </Link>
         </div>
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {doctors.map((d) => (
-            <Link
-              key={d.slug}
-              href={`/doctors/${d.slug}`}
-              className="rounded-3xl bg-card p-5 ring-1 ring-foreground/10 transition hover:ring-primary/40"
-            >
-              <DoctorPortrait
-                doctor={d}
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="mb-4 aspect-[4/5] rounded-2xl"
-              />
-              <p className="text-xs tracking-[0.16em] text-muted-foreground uppercase">
-                {d.specialty}
-              </p>
-              <h3 className="mt-2 font-heading text-2xl text-ink">{d.name}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{d.credentials}</p>
-              <p className="mt-3 text-sm leading-relaxed text-foreground/80">{d.bio}</p>
-            </Link>
+          {doctors.map((d, i) => (
+            <DoctorCard key={d.slug} doctor={d} featured={i === 0} />
           ))}
         </div>
       </section>
@@ -277,7 +292,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-cream py-16">
+      <section className="border-t bg-background py-16">
         <div className="mx-auto max-w-6xl px-4">
           <HafizMedicos />
         </div>

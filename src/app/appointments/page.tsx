@@ -38,28 +38,25 @@ export default function AppointmentsPage() {
           immediately. Email to {hospital.email} is the backup if WhatsApp is
           not installed. Emergency still uses {hospital.phoneDisplay}.
         </p>
-        <div className="mt-8 flex flex-col gap-3">
+        <p className="mt-8 rounded-2xl bg-muted px-4 py-3 text-sm leading-relaxed">
+          A sample message is already filled in the form:{" "}
+          <strong>{dummyBooking.name}</strong> for{" "}
+          <strong>{dummyBooking.doctor}</strong>, {dummyBooking.when.toLowerCase()}.
+          Edit it, then send on WhatsApp to {hospital.whatsappDisplay}.
+        </p>
+        <div className="mt-4 flex flex-col gap-3">
           <a
             href={dummyWhatsapp}
             target="_blank"
             rel="noreferrer"
-            className={cn(buttonVariants({ size: "lg" }), "h-12 px-5")}
+            className={cn(buttonVariants({ variant: "outline" }), "h-11 px-5")}
           >
-            Send test booking on WhatsApp
+            Open the sample WhatsApp message
           </a>
-          <a
-            href={dummyEmail}
-            className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-12 px-5")}
-          >
-            Send the same test by email
+          <a href={dummyEmail} className="text-sm text-primary underline underline-offset-4">
+            Or send that sample by email
           </a>
         </div>
-        <p className="mt-4 rounded-2xl bg-muted px-4 py-3 text-sm leading-relaxed">
-          Test booking: <strong>{dummyBooking.name}</strong> for{" "}
-          <strong>{dummyBooking.doctor}</strong>, {dummyBooking.when.toLowerCase()}{" "}
-          ({dummyBooking.service}). Tap the green button, then Send in WhatsApp
-          so the message lands on {hospital.whatsappDisplay}.
-        </p>
         <div className="mt-8 overflow-hidden rounded-3xl ring-1 ring-foreground/10">
           <FacilityImage
             photo={photos.reception}

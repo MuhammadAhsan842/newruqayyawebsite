@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { doctors } from "@/lib/hospital";
-import { DoctorPortrait } from "@/components/doctor-portrait";
+import { DoctorCard } from "@/components/doctor-card";
 import { HafizMedicos } from "@/components/hafiz-medicos";
 import { pageMeta } from "@/lib/seo";
 
@@ -23,30 +22,9 @@ export default function DoctorsPage() {
         Hours move with theatre lists — reception confirms the next slot when
         you book.
       </p>
-      <div className="mt-10 grid gap-4">
-        {doctors.map((d) => (
-          <Link
-            key={d.slug}
-            href={`/doctors/${d.slug}`}
-            className="grid gap-5 rounded-3xl bg-card p-5 ring-1 ring-foreground/10 transition hover:ring-primary/40 sm:grid-cols-[11rem_1fr] sm:p-6"
-          >
-            <DoctorPortrait
-              doctor={d}
-              sizes="(max-width: 640px) 100vw, 176px"
-              className="aspect-[4/5] w-full rounded-2xl"
-              priority={d.slug === "dr-waseem-iqbal"}
-            />
-            <div className="flex flex-col justify-center">
-              <p className="text-xs tracking-[0.16em] text-muted-foreground uppercase">
-                {d.specialty}
-              </p>
-              <h2 className="mt-2 font-heading text-3xl text-ink">{d.name}</h2>
-              <p className="mt-1 text-sm">{d.honorific}</p>
-              <p className="mt-3 text-sm text-muted-foreground">{d.credentials}</p>
-              <p className="mt-4 text-sm leading-relaxed">{d.bio}</p>
-              <p className="mt-4 text-sm font-medium text-primary">Profile & booking</p>
-            </div>
-          </Link>
+      <div className="mt-10 grid gap-4 lg:grid-cols-2">
+        {doctors.map((d, i) => (
+          <DoctorCard key={d.slug} doctor={d} featured={i === 0} titleAs="h2" />
         ))}
       </div>
       <div className="mt-12">

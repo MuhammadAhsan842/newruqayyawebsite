@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, Phone } from "lucide-react";
-import { hospital, nav } from "@/lib/hospital";
+import { hospital, nav, whatsappLink, defaultWhatsappMessage } from "@/lib/hospital";
+import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Sheet,
@@ -30,13 +31,24 @@ export function SiteHeader() {
           <p className="font-medium tracking-wide">
             24/7 emergency · Nespak Housing Scheme, Lahore
           </p>
-          <a
-            href={`tel:${hospital.phoneTel}`}
-            className="inline-flex items-center gap-1.5 font-semibold underline-offset-2 hover:underline"
-          >
-            <Phone className="size-3.5" />
-            {hospital.phoneDisplay}
-          </a>
+          <div className="flex items-center gap-4">
+            <a
+              href={`tel:${hospital.phoneTel}`}
+              className="inline-flex items-center gap-1.5 font-semibold underline-offset-2 hover:underline"
+            >
+              <Phone className="size-3.5" />
+              {hospital.phoneDisplay}
+            </a>
+            <a
+              href={whatsappLink(defaultWhatsappMessage)}
+              target="_blank"
+              rel="noreferrer"
+              className="hidden items-center gap-1.5 font-semibold underline-offset-2 hover:underline sm:inline-flex"
+            >
+              <WhatsAppIcon className="size-3.5" />
+              WhatsApp
+            </a>
+          </div>
         </div>
       </div>
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">

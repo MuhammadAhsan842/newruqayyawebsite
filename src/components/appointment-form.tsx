@@ -136,7 +136,7 @@ export function AppointmentForm({
           <Label htmlFor="visitType">How would you like to be seen?</Label>
           <select
             id="visitType"
-            className="h-10 w-full rounded-lg border border-input bg-transparent px-2.5 text-sm"
+            className="h-10 w-full rounded-lg border border-input bg-background px-2.5 text-sm"
             value={visitType}
             onChange={(e) =>
               setVisitType(e.target.value as (typeof visitTypes)[number])
@@ -163,7 +163,7 @@ export function AppointmentForm({
           <Label htmlFor="doctor">Doctor</Label>
           <select
             id="doctor"
-            className="h-10 w-full rounded-lg border border-input bg-transparent px-2.5 text-sm"
+            className="h-10 w-full rounded-lg border border-input bg-background px-2.5 text-sm"
             value={doctor}
             onChange={(e) => setDoctor(e.target.value)}
           >
@@ -179,7 +179,7 @@ export function AppointmentForm({
           <Label htmlFor="service">Service</Label>
           <select
             id="service"
-            className="h-10 w-full rounded-lg border border-input bg-transparent px-2.5 text-sm"
+            className="h-10 w-full rounded-lg border border-input bg-background px-2.5 text-sm"
             value={service}
             onChange={(e) => setService(e.target.value)}
           >

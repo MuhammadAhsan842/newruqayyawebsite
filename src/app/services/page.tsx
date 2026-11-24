@@ -25,7 +25,7 @@ export default function ServicesPage() {
           <Link
             key={s.slug}
             href={`/services/${s.slug}`}
-            className="rounded-3xl bg-card p-6 ring-1 ring-foreground/10 transition hover:ring-primary/40"
+            className="rounded-3xl bg-card p-6 ring-1 ring-foreground/10 transition duration-300 hover:-translate-y-0.5 hover:ring-primary/40"
           >
             <h2 className="font-heading text-2xl text-ink">{s.title}</h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
