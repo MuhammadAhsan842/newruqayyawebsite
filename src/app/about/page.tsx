@@ -44,7 +44,8 @@ export default function AboutPage() {
         <p>
           Ruqayya Medical Center is that building on Sutlej Avenue: emergency
           and critical care that never close; outpatient clinics for surgery,
-          gynecology, general medicine, and psychology; digital X-ray; a
+          gynecology, general medicine, and psychology; an in-house digital
+          X-ray lab; a
           Chughtai Lab desk at reception; Hafiz Medicos — the owner-run pharmacy
           on the ground floor; and
           online consultations when travel is the barrier.

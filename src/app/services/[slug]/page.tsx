@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getService, services } from "@/lib/hospital";
 import { AppointmentForm } from "@/components/appointment-form";
 import { HafizMedicos } from "@/components/hafiz-medicos";
+import { DigitalXray } from "@/components/digital-xray";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { pageMeta } from "@/lib/seo";
@@ -66,6 +67,11 @@ export default async function ServicePage({
         </article>
         <AppointmentForm presetService={service.title} />
       </div>
+      {slug === "diagnostics" ? (
+        <div className="mt-12">
+          <DigitalXray showLink={false} />
+        </div>
+      ) : null}
       {slug === "pharmacy" ? (
         <div className="mt-12">
           <HafizMedicos showLink={false} />

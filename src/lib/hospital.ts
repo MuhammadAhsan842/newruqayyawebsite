@@ -166,16 +166,17 @@ export const services: Service[] = [
   },
   {
     slug: "diagnostics",
-    title: "Diagnostics",
+    title: "Digital X-ray & Laboratory",
     summary:
-      "Digital X-ray on the building and laboratory support on the same floor, so treatment decisions do not wait on a second trip across the city.",
+      "An in-house digital X-ray lab — table, tube, and console — plus Chughtai Lab collection at reception, so the film and the blood work stay in this building.",
     details: [
-      "Digital X-ray advertised and available at the center",
-      "Chughtai Lab collection at reception for pathology",
-      "Results routed back to the treating doctor",
-      "Pre-operative work-up for surgical patients",
+      "Dedicated X-ray room with examination table, overhead tube, and wall stand",
+      "Digital console: the image is on the monitor, then printed if your doctor needs a hard copy",
+      "Trauma, orthopedic, and follow-up films the same visit — including post-fixation checks",
+      "Chughtai Lab collection at reception for pathology, with results routed to the treating doctor",
+      "Pre-operative work-up without a second trip across Lahore",
     ],
-    audience: "Patients who need answers before they leave the building.",
+    audience: "Patients who need a film or a lab today, in the same hospital as the clinic.",
   },
   {
     slug: "pharmacy",
@@ -392,6 +393,17 @@ export function whatsappLink(message: string) {
 export function emailLink(subject: string, body: string) {
   return `mailto:${hospital.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
+
+export const digitalXray = {
+  name: "Digital X-ray lab",
+  kicker: "Diagnostics in this building",
+  lead: "The DIGITAL X-RAY board on Sutlej Avenue is not decoration. Inside is a working lab: the table and tube, a digital console, and films that go straight back to your doctor — surgery, orthopedics, emergency, or clinic.",
+  steps: [
+    { t: "The room", d: "Lie on the table or stand at the wall bucky. The tube is here; you are not sent to another campus." },
+    { t: "The console", d: "The image appears on the workstation. A lightbox and printer sit beside it if a hard copy is needed." },
+    { t: "The film", d: "Trauma and orthopedic views — ankle, arm, post-plating — stay with this visit so the next decision happens downstairs, not tomorrow across town." },
+  ],
+} as const;
 
 export const pharmacy = {
   name: "Hafiz Medicos",

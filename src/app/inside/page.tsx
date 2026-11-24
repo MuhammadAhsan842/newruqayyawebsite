@@ -1,11 +1,12 @@
 import { FacilityGallery } from "@/components/facility-gallery";
 import { FacilityImage } from "@/components/facility-image";
+import { DigitalXray } from "@/components/digital-xray";
 import { photos } from "@/lib/photos";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta(
   "Inside the center",
-  "See Ruqayya Medical Center: the Sutlej Avenue front, reception, OPD waiting area, and inpatient ward in Nespak, Lahore."
+  "See Ruqayya Medical Center: the Sutlej Avenue front, reception, OPD, digital X-ray lab, Hafiz Medicos, and inpatient ward in Nespak, Lahore."
 );
 
 export default function InsidePage() {
@@ -35,10 +36,13 @@ export default function InsidePage() {
         <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
           These are photographs of this hospital — not a catalogue of borrowed
           corridors. Use them to recognise the street front, the granite desk,
-          the OPD waiting area, Hafiz Medicos on the ground floor, and the ward
-          before you arrive.
+          the OPD waiting area, the digital X-ray lab, Hafiz Medicos on the
+          ground floor, and the ward before you arrive.
         </p>
-        <div className="mt-10">
+        <div className="mt-12">
+          <DigitalXray />
+        </div>
+        <div className="mt-14">
           <FacilityGallery />
         </div>
       </div>

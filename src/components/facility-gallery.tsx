@@ -16,6 +16,8 @@ const mosaic: Record<string, string> = {
   reception: "md:col-span-2 md:row-span-2",
   "opd-waiting": "md:col-span-2 md:row-span-2",
   facade: "md:col-span-2",
+  "xray-room": "md:row-span-2",
+  "xray-console": "md:col-span-2",
   "consulting-room": "",
   "consultant-office": "",
   "clinic-room": "",

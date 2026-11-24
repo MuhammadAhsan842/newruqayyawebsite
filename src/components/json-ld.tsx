@@ -15,6 +15,8 @@ export function JsonLd() {
       photos.reception.src,
       photos.opdWaiting.src,
       photos.hafizMedicos.src,
+      photos.xrayRoom.src,
+      photos.xrayConsole.src,
       photos.ward.src,
     ],
     address: {

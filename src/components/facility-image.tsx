@@ -8,6 +8,7 @@ export function FacilityImage({
   sizes,
   priority = false,
   objectPosition = "center",
+  objectFit = "cover",
   fill = false,
 }: {
   photo: FacilityPhoto;
@@ -15,6 +16,7 @@ export function FacilityImage({
   sizes: string;
   priority?: boolean;
   objectPosition?: string;
+  objectFit?: "cover" | "contain";
   fill?: boolean;
 }) {
   if (fill) {
@@ -25,7 +27,7 @@ export function FacilityImage({
         fill
         sizes={sizes}
         priority={priority}
-        className={cn("object-cover", className)}
+        className={cn(objectFit === "contain" ? "object-contain" : "object-cover", className)}
         style={{ objectPosition }}
         unoptimized
       />
@@ -40,7 +42,7 @@ export function FacilityImage({
         fill
         sizes={sizes}
         priority={priority}
-        className="object-cover"
+        className={objectFit === "contain" ? "object-contain bg-ink" : "object-cover"}
         style={{ objectPosition }}
         unoptimized
       />

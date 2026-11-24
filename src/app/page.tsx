@@ -11,6 +11,7 @@ import { photos } from "@/lib/photos";
 import { FacilityImage } from "@/components/facility-image";
 import { DoctorPortrait } from "@/components/doctor-portrait";
 import { HafizMedicos } from "@/components/hafiz-medicos";
+import { DigitalXray } from "@/components/digital-xray";
 import { FacilityGallery } from "@/components/facility-gallery";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -106,7 +107,7 @@ export default function Home() {
           {[
             ["24/7", "Emergency desk never closes"],
             ["Named specialists", "Surgery, ortho, gynae, skin, medicine"],
-            ["One building", "Clinics, X-ray, lab, Hafiz Medicos"],
+            ["One building", "Clinics, digital X-ray, lab, Hafiz Medicos"],
             ["Two ways in", "Walk in or consult online"],
           ].map(([k, v]) => (
             <div key={k}>
@@ -267,6 +268,12 @@ export default function Home() {
               <p className="mt-3 text-sm leading-relaxed text-foreground/80">{d.bio}</p>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="border-t bg-cream py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <DigitalXray />
         </div>
       </section>
 
