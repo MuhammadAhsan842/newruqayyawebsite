@@ -220,6 +220,12 @@ export const doctors: Doctor[] = [
       "Women’s health follow-up",
       "Evening appointments for working families",
     ],
+    portrait: {
+      src: "/media/dr-shazia.jpg",
+      alt: "Dr. Shazia Ali, gynecologist at Ruqayya Medical Center",
+      width: 680,
+      height: 680,
+    },
   },
   {
     slug: "dr-waseem-iqbal",
