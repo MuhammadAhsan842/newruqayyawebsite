@@ -256,6 +256,12 @@ export const doctors: Doctor[] = [
       "Family and confidence-related concerns",
       "Confidential, appointment-only care",
     ],
+    portrait: {
+      src: "/media/ms-najma.jpg",
+      alt: "Ms. Najma Badar, clinical psychologist at Ruqayya Medical Center",
+      width: 680,
+      height: 680,
+    },
   },
   {
     slug: "dr-faisal",
