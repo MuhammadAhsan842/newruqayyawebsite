@@ -15,8 +15,8 @@ export const photos = {
     alt: "Ruqayya Medical Center street front on Sutlej Avenue, with Ruqayya Clinic signage, digital X-ray, and the ground-floor pharmacy",
     caption: "The building you look for on Sutlej Avenue — Ruqayya Clinic, digital X-ray, pharmacy at street level.",
     place: "Street",
-    width: 2400,
-    height: 1260,
+    width: 2560,
+    height: 1344,
   },
   reception: {
     id: "reception",
@@ -24,8 +24,8 @@ export const photos = {
     alt: "Granite reception desk at Ruqayya Medical Center with the hospital logo and Prof. Dr. Waseem Iqbal’s clinic door",
     caption: "This is where you arrive. The desk books clinics, points you to emergency, and sits next to Prof. Dr. Waseem Iqbal’s door.",
     place: "Reception",
-    width: 1800,
-    height: 1351,
+    width: 2000,
+    height: 1501,
   },
   consultingRoom: {
     id: "consulting-room",

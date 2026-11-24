@@ -21,8 +21,8 @@ export default function ContactPage() {
         <FacilityImage
           photo={photos.reception}
           sizes="100vw"
-          className="max-h-[28rem] object-cover"
-          objectPosition="center"
+          className="max-h-[32rem] object-cover"
+          objectPosition="center 20%"
         />
       </div>
       <p className="mt-4 max-w-2xl text-sm text-muted-foreground">

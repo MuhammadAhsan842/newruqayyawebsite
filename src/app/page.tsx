@@ -22,31 +22,32 @@ export const metadata = pageMeta(
 export default function Home() {
   return (
     <div>
-      <section className="relative min-h-[88vh] overflow-hidden">
-        <FacilityImage
-          photo={photos.facadeHero}
-          fill
-          priority
-          sizes="100vw"
-          objectPosition="center 35%"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/88 via-ink/55 to-ink/25" />
-        <div className="relative mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-end px-4 py-16 lg:justify-center lg:py-24">
-          <p className="text-xs font-semibold tracking-[0.22em] text-gold uppercase">
+      <section className="grid lg:min-h-[78vh] lg:grid-cols-2">
+        <div className="relative order-1 h-[46vh] min-h-64 lg:order-2 lg:h-auto">
+          <FacilityImage
+            photo={photos.facadeHero}
+            fill
+            priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            objectPosition="center 40%"
+          />
+        </div>
+        <div className="order-2 flex flex-col justify-center bg-cream px-4 py-12 lg:order-1 lg:px-12 xl:px-16">
+          <p className="text-xs font-semibold tracking-[0.22em] text-gold-foreground uppercase">
             Multi-specialty hospital · Nespak Housing Scheme
           </p>
-          <h1 className="mt-4 max-w-3xl font-heading text-4xl leading-[1.08] text-white sm:text-6xl">
+          <h1 className="mt-4 max-w-xl font-heading text-4xl leading-[1.08] text-ink sm:text-5xl xl:text-6xl">
             This is the building on Sutlej Avenue.
-            <span className="mt-2 block text-gold">Walk in when you need it.</span>
+            <span className="mt-2 block text-primary">Walk in when you need it.</span>
           </h1>
           <p
-            className="mt-4 text-2xl text-white/90"
+            className="mt-4 text-2xl text-primary"
             style={{ fontFamily: "var(--font-urdu), serif" }}
             dir="rtl"
           >
             {hospital.urduLine}
           </p>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Ruqayya Medical Center — 24/7 emergency, named specialists, digital
             X-ray, a partner lab at reception, and a pharmacy on the ground floor.
           </p>
@@ -64,9 +65,9 @@ export default function Home() {
               24/7 Emergency
             </Link>
           </div>
-          <p className="mt-5 text-sm text-white/75">
+          <p className="mt-5 text-sm text-muted-foreground">
             Call{" "}
-            <a className="font-semibold text-gold" href={`tel:${hospital.phoneTel}`}>
+            <a className="font-semibold text-primary" href={`tel:${hospital.phoneTel}`}>
               {hospital.phoneDisplay}
             </a>{" "}
             · {hospital.address.line1}

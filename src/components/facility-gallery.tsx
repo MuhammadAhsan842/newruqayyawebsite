@@ -45,13 +45,9 @@ export function FacilityGallery() {
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover transition duration-500 group-hover:scale-[1.03]"
             />
-            <span className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/0 to-transparent" />
-            <span className="absolute right-4 bottom-4 left-4">
-              <span className="text-[0.65rem] font-semibold tracking-[0.2em] text-gold uppercase">
+            <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 to-transparent px-4 py-4">
+              <span className="text-[0.7rem] font-semibold tracking-[0.18em] text-gold uppercase">
                 {photo.place}
-              </span>
-              <span className="mt-1 block font-heading text-lg text-white sm:text-xl">
-                {photo.caption.split("—")[0]}
               </span>
             </span>
           </button>
