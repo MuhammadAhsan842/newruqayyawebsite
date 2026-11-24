@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta(
   "Doctors",
-  "Meet the Ruqayya Medical Center panel: Prof. Dr. Mohammad Akmal Shafiq, Dr. Waqas Ahmad Bhullar, Dr. Shazia Ali, Dr. Waseem Iqbal, Ms. Najma Badar, and Dr. Faisal."
+  "Meet the Ruqayya Medical Center panel: Prof. Dr. Mohammad Akmal Shafiq, Dr. Waqas Ahmad Bhullar, Dr. Shazia Ali, Dr. Asim Suhail, Dr. Waseem Iqbal, Ms. Najma Badar, and Dr. Faisal."
 );
 
 export default function DoctorsPage() {

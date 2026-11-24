@@ -63,7 +63,7 @@ export const services: Service[] = [
     slug: "outpatient",
     title: "Outpatient Clinics",
     summary:
-      "Same-building OPD for medicine, surgery, orthopedics, gynecology, and psychology — so follow-up does not mean a city-wide commute.",
+      "Same-building OPD for medicine, surgery, orthopedics, gynecology, dermatology, and psychology — so follow-up does not mean a city-wide commute.",
     details: [
       "Scheduled specialist clinics with reception-managed appointments",
       "Walk-in OPD for general complaints during posted hours",
@@ -111,6 +111,19 @@ export const services: Service[] = [
       "Respectful, private consultation rooms",
     ],
     audience: "Women who prefer a neighbourhood hospital over a downtown waiting lounge.",
+  },
+  {
+    slug: "dermatology",
+    title: "Dermatology & Cosmetology",
+    summary:
+      "Skin, hair, and facial aesthetic care with Dr. Asim Suhail — medical dermatology and cosmetic consultation in the same hospital.",
+    details: [
+      "Medical dermatology for rashes, acne, pigmentation, hair, and chronic skin disease",
+      "Facial aesthetic and cosmetology consultation",
+      "Private clinic rooms and a clear plan before any procedure",
+      "Follow-up in the same building as pharmacy and labs",
+    ],
+    audience: "Patients who want a named dermatologist in Nespak, not a mall-counter skin clinic.",
   },
   {
     slug: "medicine",
@@ -260,6 +273,28 @@ export const doctors: Doctor[] = [
       alt: "Dr. Shazia Ali, gynecologist at Ruqayya Medical Center",
       width: 680,
       height: 680,
+    },
+  },
+  {
+    slug: "dr-asim-suhail",
+    name: "Dr. Asim Suhail",
+    honorific: "Consultant Dermatologist & Cosmetologist",
+    specialty: "Dermatologist, Cosmetologist",
+    credentials:
+      "MBBS, MCPS (Dermatology), AACME (USA), Professional Diploma in Facial Aesthetic (USA)",
+    experience: "Consultant dermatologist and cosmetologist",
+    clinic: "Dermatology clinic hours confirmed at reception.",
+    bio: "Dr. Asim Suhail sees skin, hair, and facial aesthetic patients at Ruqayya Medical Center. The clinic covers medical dermatology — acne, pigmentation, rashes, chronic skin disease — and cosmetology, with the same private-room standard as the rest of the specialist panel.",
+    focus: [
+      "Medical dermatology for skin, hair, and nails",
+      "Facial aesthetic and cosmetology consultation",
+      "Follow-up plans you can complete in this building",
+    ],
+    portrait: {
+      src: "/media/dr-asim.jpg",
+      alt: "Dr. Asim Suhail, dermatologist and cosmetologist at Ruqayya Medical Center",
+      width: 800,
+      height: 800,
     },
   },
   {
