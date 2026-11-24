@@ -40,6 +40,7 @@ export function JsonLd() {
       "@type": "Physician",
       name: d.name,
       medicalSpecialty: d.specialty,
+      ...(d.portrait ? { image: d.portrait.src } : {}),
     })),
   };
 

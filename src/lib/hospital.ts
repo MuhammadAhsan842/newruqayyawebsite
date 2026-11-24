@@ -164,6 +164,13 @@ export const services: Service[] = [
   },
 ];
 
+export type DoctorPortrait = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
 export type Doctor = {
   slug: string;
   name: string;
@@ -174,6 +181,7 @@ export type Doctor = {
   clinic: string;
   bio: string;
   focus: string[];
+  portrait?: DoctorPortrait;
 };
 
 export const doctors: Doctor[] = [
@@ -191,6 +199,12 @@ export const doctors: Doctor[] = [
       "Hernia, gallbladder, thyroid, and breast procedures",
       "Emergency surgical assessment",
     ],
+    portrait: {
+      src: "/media/dr-akmal.jpg",
+      alt: "Prof. Dr. Mohammad Akmal Shafiq, general and laparoscopic surgeon at Ruqayya Medical Center",
+      width: 680,
+      height: 680,
+    },
   },
   {
     slug: "dr-shazia-ali",

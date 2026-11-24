@@ -9,6 +9,7 @@ import {
 } from "@/lib/hospital";
 import { photos } from "@/lib/photos";
 import { FacilityImage } from "@/components/facility-image";
+import { DoctorPortrait } from "@/components/doctor-portrait";
 import { FacilityGallery } from "@/components/facility-gallery";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -249,8 +250,13 @@ export default function Home() {
             <Link
               key={d.slug}
               href={`/doctors/${d.slug}`}
-              className="rounded-3xl bg-card p-6 ring-1 ring-foreground/10 transition hover:ring-primary/40"
+              className="rounded-3xl bg-card p-5 ring-1 ring-foreground/10 transition hover:ring-primary/40"
             >
+              <DoctorPortrait
+                doctor={d}
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="mb-4 aspect-[4/5] rounded-2xl"
+              />
               <p className="text-xs tracking-[0.16em] text-muted-foreground uppercase">
                 {d.specialty}
               </p>
