@@ -277,6 +277,12 @@ export const doctors: Doctor[] = [
       "In-person and, where offered, online review",
       "Coordinated care with diagnostics and pharmacy",
     ],
+    portrait: {
+      src: "/media/dr-faisal.jpg",
+      alt: "Dr. Faisal, consultant at Ruqayya Medical Center",
+      width: 1159,
+      height: 1357,
+    },
   },
 ];
 
