@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils";
 
 const mosaic: Record<string, string> = {
   reception: "md:col-span-2 md:row-span-2",
+  "opd-waiting": "md:col-span-2 md:row-span-2",
   facade: "md:col-span-2",
   "consulting-room": "",
   "consultant-office": "",

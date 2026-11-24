@@ -21,14 +21,22 @@ export default function ContactPage() {
         <FacilityImage
           photo={photos.reception}
           sizes="100vw"
-          className="max-h-[32rem] object-cover"
-          objectPosition="center 20%"
+          className="max-h-[34rem] object-cover"
+          objectPosition="center"
         />
       </div>
       <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
         The granite desk under the Ruqayya Medical Center mark. Prof. Dr. Waseem
         Iqbal’s clinic is the door on the left; Chughtai Lab is on the right.
+        The corridor beyond is OPD.
       </p>
+      <div className="mt-4 overflow-hidden rounded-[2rem] ring-1 ring-foreground/10">
+        <FacilityImage
+          photo={photos.opdWaiting}
+          sizes="100vw"
+          className="max-h-[34rem] object-cover"
+        />
+      </div>
       <div className="mt-10 grid gap-8 lg:grid-cols-2">
         <div className="space-y-6">
           <div className="rounded-3xl bg-card p-6 ring-1 ring-foreground/10">

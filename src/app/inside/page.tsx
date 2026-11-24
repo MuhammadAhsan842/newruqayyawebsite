@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta(
   "Inside the center",
-  "See Ruqayya Medical Center: the Sutlej Avenue front, reception, consulting rooms, and inpatient ward in Nespak, Lahore."
+  "See Ruqayya Medical Center: the Sutlej Avenue front, reception, OPD waiting area, and inpatient ward in Nespak, Lahore."
 );
 
 export default function InsidePage() {
@@ -35,7 +35,7 @@ export default function InsidePage() {
         <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
           These are photographs of this hospital — not a catalogue of borrowed
           corridors. Use them to recognise the street front, the granite desk,
-          the consulting rooms, and the ward before you arrive.
+          the OPD waiting area, and the ward before you arrive.
         </p>
         <div className="mt-10">
           <FacilityGallery />

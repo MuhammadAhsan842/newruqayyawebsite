@@ -23,18 +23,21 @@ export default function DoctorsPage() {
         confirm the next slot when you book — in person or online. These are the
         rooms, not stock portraits.
       </p>
-      <div className="mt-10 grid grid-cols-3 gap-3">
-        {[photos.consultingRoom, photos.consultantOffice, photos.clinicRoom].map(
-          (photo) => (
-            <div key={photo.id} className="overflow-hidden rounded-2xl">
-              <FacilityImage
-                photo={photo}
-                sizes="33vw"
-                className="aspect-[3/4]"
-              />
-            </div>
-          )
-        )}
+      <div className="mt-10 grid gap-3 md:grid-cols-2">
+        <div className="overflow-hidden rounded-[2rem] ring-1 ring-foreground/10">
+          <FacilityImage
+            photo={photos.opdWaiting}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="aspect-[4/3]"
+          />
+        </div>
+        <div className="overflow-hidden rounded-[2rem] ring-1 ring-foreground/10">
+          <FacilityImage
+            photo={photos.reception}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="aspect-[4/3]"
+          />
+        </div>
       </div>
       <div className="mt-10 grid gap-4 md:grid-cols-2">
         {doctors.map((d) => (

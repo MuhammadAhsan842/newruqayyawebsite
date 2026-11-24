@@ -17,20 +17,19 @@ export default function AboutPage() {
       <h1 className="mt-3 max-w-3xl font-heading text-4xl text-ink sm:text-5xl">
         A hospital that belongs to this neighbourhood.
       </h1>
-      <div className="mt-10 grid gap-4 md:grid-cols-3">
-        <div className="overflow-hidden rounded-3xl md:col-span-2">
+      <div className="mt-10 grid gap-4 md:grid-cols-2">
+        <div className="overflow-hidden rounded-3xl">
           <FacilityImage
-            photo={photos.consultantOffice}
-            sizes="(max-width: 768px) 100vw, 66vw"
-            className="aspect-[4/3] md:aspect-[16/9]"
-            objectPosition="center 60%"
+            photo={photos.reception}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="aspect-[4/3]"
           />
         </div>
         <div className="overflow-hidden rounded-3xl">
           <FacilityImage
-            photo={photos.clinicRoom}
-            sizes="(max-width: 768px) 100vw, 33vw"
-            className="aspect-[4/3] md:h-full md:aspect-auto"
+            photo={photos.opdWaiting}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="aspect-[4/3]"
           />
         </div>
       </div>

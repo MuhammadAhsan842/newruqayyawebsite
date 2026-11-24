@@ -113,12 +113,21 @@ export default function Home() {
               See inside the center
             </Link>
           </div>
-          <div className="overflow-hidden rounded-[2rem] ring-1 ring-foreground/10">
-            <FacilityImage
-              photo={photos.reception}
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="aspect-[4/3]"
-            />
+          <div className="grid gap-3">
+            <div className="overflow-hidden rounded-[2rem] ring-1 ring-foreground/10">
+              <FacilityImage
+                photo={photos.reception}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="aspect-[4/3]"
+              />
+            </div>
+            <div className="overflow-hidden rounded-[2rem] ring-1 ring-foreground/10">
+              <FacilityImage
+                photo={photos.opdWaiting}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="aspect-[4/3]"
+              />
+            </div>
           </div>
         </div>
       </section>

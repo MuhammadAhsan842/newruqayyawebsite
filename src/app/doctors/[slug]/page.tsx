@@ -52,7 +52,7 @@ export default async function DoctorPage({
             photo={
               doctor.slug === "dr-waseem-iqbal"
                 ? photos.reception
-                : photos.consultingRoom
+                : photos.opdWaiting
             }
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="aspect-[4/3]"
