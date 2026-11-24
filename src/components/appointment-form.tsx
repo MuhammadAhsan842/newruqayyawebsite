@@ -48,7 +48,11 @@ export function AppointmentForm({ presetDoctor, presetService }: Props) {
       return;
     }
     setError("");
-    window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
+    const url = whatsappLink(message);
+    const opened = window.open(url, "_blank", "noopener,noreferrer");
+    if (!opened) {
+      window.location.href = url;
+    }
   }
 
   return (
@@ -174,7 +178,7 @@ export function AppointmentForm({ presetDoctor, presetService }: Props) {
         />
       </div>
       <div className="flex flex-col gap-3 sm:flex-row">
-        <Button type="submit" size="lg" className="h-11 px-5">
+        <Button nativeButton type="submit" size="lg" className="h-11 px-5">
           Send on WhatsApp
         </Button>
         <Button
