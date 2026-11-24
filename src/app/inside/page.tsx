@@ -35,7 +35,8 @@ export default function InsidePage() {
         <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
           These are photographs of this hospital — not a catalogue of borrowed
           corridors. Use them to recognise the street front, the granite desk,
-          the OPD waiting area, and the ward before you arrive.
+          the OPD waiting area, Hafiz Medicos on the ground floor, and the ward
+          before you arrive.
         </p>
         <div className="mt-10">
           <FacilityGallery />

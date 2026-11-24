@@ -166,13 +166,14 @@ export const services: Service[] = [
   },
   {
     slug: "pharmacy",
-    title: "On-site Pharmacy",
+    title: "Hafiz Medicos",
     summary:
-      "Hafiz Medicos sits on the ground floor of the same building. Collect the script before you go home.",
+      "The ground-floor pharmacy of Ruqayya Medical Center, run by its owner. Collect the script downstairs before you go home.",
     details: [
-      "Ground-floor pharmacy on Sutlej Avenue, under the clinic sign",
-      "In-house dispensing for OPD and admitted patients",
-      "Ask reception if a medicine is in stock before you leave the desk",
+      "Hafiz Medicos is the in-house pharmacy at street level on Sutlej Avenue",
+      "Meet the owner at the counter — this is not an anonymous chain shop",
+      "Dispensing for OPD, admitted patients, and walk-in prescriptions",
+      "Ask reception if a medicine is in stock before you leave the clinic desk",
     ],
     audience: "Anyone who should not have to hunt for a late-night pharmacy after discharge.",
   },
@@ -371,6 +372,13 @@ export function whatsappLink(message: string) {
 export function emailLink(subject: string, body: string) {
   return `mailto:${hospital.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
+
+export const pharmacy = {
+  name: "Hafiz Medicos",
+  ownerLabel: "Owner",
+  role: "Ground-floor pharmacy",
+  bio: "Hafiz Medicos is the pharmacy inside Ruqayya Medical Center, run by its owner from the same building. After clinic or discharge, you collect medicines downstairs — stocked shelves, a glass counter, and a person who knows this hospital’s prescriptions.",
+} as const;
 
 export const defaultWhatsappMessage =
   "Assalamualaikum, I would like to book an appointment at Ruqayya Medical Center.";

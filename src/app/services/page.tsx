@@ -4,7 +4,7 @@ import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta(
   "Services",
-  "Emergency, outpatient clinics, general and laparoscopic surgery, gynecology, general medicine, psychology, diagnostics, pharmacy, and online consultations."
+  "Emergency, outpatient clinics, surgery, orthopedics, gynecology, dermatology, general medicine, psychology, diagnostics, Hafiz Medicos pharmacy, and online consultations."
 );
 
 export default function ServicesPage() {

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { doctors } from "@/lib/hospital";
 import { DoctorPortrait } from "@/components/doctor-portrait";
+import { HafizMedicos } from "@/components/hafiz-medicos";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta(
@@ -47,6 +48,9 @@ export default function DoctorsPage() {
             </div>
           </Link>
         ))}
+      </div>
+      <div className="mt-12">
+        <HafizMedicos />
       </div>
     </div>
   );

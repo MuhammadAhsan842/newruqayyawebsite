@@ -10,6 +10,7 @@ import {
 import { photos } from "@/lib/photos";
 import { FacilityImage } from "@/components/facility-image";
 import { DoctorPortrait } from "@/components/doctor-portrait";
+import { HafizMedicos } from "@/components/hafiz-medicos";
 import { FacilityGallery } from "@/components/facility-gallery";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -50,7 +51,8 @@ export default function Home() {
           </p>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Ruqayya Medical Center — 24/7 emergency, named specialists, digital
-            X-ray, a partner lab at reception, and a pharmacy on the ground floor.
+            X-ray, a partner lab at reception, and Hafiz Medicos on the ground
+            floor.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/appointments" className={cn(buttonVariants({ size: "lg" }), "h-12 px-6")}>
@@ -103,8 +105,8 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-6 px-4 py-8 sm:grid-cols-2 lg:grid-cols-4">
           {[
             ["24/7", "Emergency desk never closes"],
-            ["Named specialists", "Surgery, gynae, medicine, psychology"],
-            ["One building", "Clinics, X-ray, lab, pharmacy"],
+            ["Named specialists", "Surgery, ortho, gynae, skin, medicine"],
+            ["One building", "Clinics, X-ray, lab, Hafiz Medicos"],
             ["Two ways in", "Walk in or consult online"],
           ].map(([k, v]) => (
             <div key={k}>
@@ -268,6 +270,12 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-cream py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <HafizMedicos />
+        </div>
+      </section>
+
       <section className="border-y bg-card">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 lg:grid-cols-2">
           <div>
@@ -279,7 +287,7 @@ export default function Home() {
             </h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
               Look for the red RUQAYYA CLINIC letters and the digital X-ray
-              board. Hafiz Medicos is the pharmacy on the ground floor. Parking
+              board. Hafiz Medicos — the owner-run pharmacy — is on the ground floor. Parking
               at the hospital. Emergency is staffed around the clock.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">

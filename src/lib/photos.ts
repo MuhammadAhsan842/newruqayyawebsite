@@ -81,12 +81,31 @@ export const photos = {
     width: 1350,
     height: 1800,
   },
+  hafizOwner: {
+    id: "hafiz-owner",
+    src: "/media/hafiz-owner.jpg",
+    alt: "Owner of Hafiz Medicos, the ground-floor pharmacy at Ruqayya Medical Center",
+    caption: "The owner of Hafiz Medicos — the pharmacy inside this hospital.",
+    place: "Hafiz Medicos",
+    width: 1199,
+    height: 1312,
+  },
+  hafizMedicos: {
+    id: "hafiz-medicos",
+    src: "/media/hafiz-medicos.jpg",
+    alt: "Interior of Hafiz Medicos: glass-counter desk and blue shelving stocked with medicines at Ruqayya Medical Center",
+    caption: "Hafiz Medicos on the ground floor — collect the script here before you leave.",
+    place: "Pharmacy",
+    width: 1447,
+    height: 1087,
+  },
 } as const satisfies Record<string, FacilityPhoto>;
 
 export const galleryPhotos: FacilityPhoto[] = [
   photos.reception,
   photos.opdWaiting,
   photos.facadeHero,
+  photos.hafizMedicos,
   photos.consultingRoom,
   photos.consultantOffice,
   photos.clinicRoom,

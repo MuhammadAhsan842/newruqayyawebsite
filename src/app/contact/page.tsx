@@ -1,6 +1,7 @@
 import { hospital, mapsDirections, mapsEmbed } from "@/lib/hospital";
 import { photos } from "@/lib/photos";
 import { FacilityImage } from "@/components/facility-image";
+import { HafizMedicos } from "@/components/hafiz-medicos";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta(
@@ -52,7 +53,7 @@ export default function ContactPage() {
             </p>
             <p className="mt-3 text-sm text-muted-foreground">
               Look for the red RUQAYYA CLINIC letters and the digital X-ray
-              board. Hafiz Medicos is the pharmacy at street level.
+              board. Hafiz Medicos, the owner-run pharmacy, is at street level.
             </p>
             <a
               href={mapsDirections}
@@ -93,6 +94,9 @@ export default function ContactPage() {
             loading="lazy"
           />
         </div>
+      </div>
+      <div className="mt-12">
+        <HafizMedicos />
       </div>
     </div>
   );
