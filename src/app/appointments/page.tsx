@@ -1,5 +1,7 @@
 import { AppointmentForm } from "@/components/appointment-form";
+import { FacilityImage } from "@/components/facility-image";
 import { hospital, whatsappLink, defaultWhatsappMessage } from "@/lib/hospital";
+import { photos } from "@/lib/photos";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta(
@@ -37,6 +39,13 @@ export default function AppointmentsPage() {
             </li>
           ))}
         </ol>
+        <div className="mt-8 overflow-hidden rounded-3xl ring-1 ring-foreground/10">
+          <FacilityImage
+            photo={photos.reception}
+            sizes="(max-width: 1024px) 100vw, 40vw"
+            className="aspect-[4/3]"
+          />
+        </div>
         <p className="mt-8 text-sm">
           Prefer to speak?{" "}
           <a className="font-semibold text-primary" href={`tel:${hospital.phoneTel}`}>

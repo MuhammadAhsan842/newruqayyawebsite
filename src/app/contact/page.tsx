@@ -1,4 +1,6 @@
 import { hospital, mapsDirections, mapsEmbed } from "@/lib/hospital";
+import { photos } from "@/lib/photos";
+import { FacilityImage } from "@/components/facility-image";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta(
@@ -15,6 +17,18 @@ export default function ContactPage() {
       <h1 className="mt-3 font-heading text-4xl text-ink sm:text-5xl">
         Come to 103-C2. We are already open.
       </h1>
+      <div className="mt-10 overflow-hidden rounded-[2rem] ring-1 ring-foreground/10">
+        <FacilityImage
+          photo={photos.reception}
+          sizes="100vw"
+          className="max-h-[28rem] object-cover"
+          objectPosition="center"
+        />
+      </div>
+      <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
+        The granite desk under the Ruqayya Medical Center mark. Prof. Dr. Waseem
+        Iqbal’s clinic is the door on the left; Chughtai Lab is on the right.
+      </p>
       <div className="mt-10 grid gap-8 lg:grid-cols-2">
         <div className="space-y-6">
           <div className="rounded-3xl bg-card p-6 ring-1 ring-foreground/10">
@@ -27,6 +41,10 @@ export default function ContactPage() {
               {hospital.address.landmark}
               <br />
               {hospital.address.city}, {hospital.address.region}
+            </p>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Look for the red RUQAYYA CLINIC letters and the digital X-ray
+              board. Hafiz Medicos is the pharmacy at street level.
             </p>
             <a
               href={mapsDirections}

@@ -7,6 +7,9 @@ import {
   whatsappLink,
   defaultWhatsappMessage,
 } from "@/lib/hospital";
+import { photos } from "@/lib/photos";
+import { FacilityImage } from "@/components/facility-image";
+import { FacilityGallery } from "@/components/facility-gallery";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { pageMeta } from "@/lib/seo";
@@ -19,76 +22,55 @@ export const metadata = pageMeta(
 export default function Home() {
   return (
     <div>
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(1200px_circle_at_10%_-10%,oklch(0.72_0.09_75_/_0.22),transparent_55%),radial-gradient(900px_circle_at_90%_10%,oklch(0.4_0.06_175_/_0.18),transparent_50%)]" />
-        <div className="grain absolute inset-0 opacity-70" />
-        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:py-24">
-          <div>
-            <p className="text-xs font-semibold tracking-[0.22em] text-gold-foreground uppercase">
-              Multi-specialty hospital · Nespak Housing Scheme
-            </p>
-            <h1 className="mt-4 font-heading text-4xl leading-[1.1] text-ink sm:text-6xl">
-              Care you can reach tonight.
-              <span className="mt-2 block text-primary">Not across the city.</span>
-            </h1>
-            <p
-              className="mt-4 text-2xl text-primary"
-              style={{ fontFamily: "var(--font-urdu), serif" }}
-              dir="rtl"
+      <section className="relative min-h-[88vh] overflow-hidden">
+        <FacilityImage
+          photo={photos.facadeHero}
+          fill
+          priority
+          sizes="100vw"
+          objectPosition="center 35%"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/88 via-ink/55 to-ink/25" />
+        <div className="relative mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-end px-4 py-16 lg:justify-center lg:py-24">
+          <p className="text-xs font-semibold tracking-[0.22em] text-gold uppercase">
+            Multi-specialty hospital · Nespak Housing Scheme
+          </p>
+          <h1 className="mt-4 max-w-3xl font-heading text-4xl leading-[1.08] text-white sm:text-6xl">
+            This is the building on Sutlej Avenue.
+            <span className="mt-2 block text-gold">Walk in when you need it.</span>
+          </h1>
+          <p
+            className="mt-4 text-2xl text-white/90"
+            style={{ fontFamily: "var(--font-urdu), serif" }}
+            dir="rtl"
+          >
+            {hospital.urduLine}
+          </p>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">
+            Ruqayya Medical Center — 24/7 emergency, named specialists, digital
+            X-ray, a partner lab at reception, and a pharmacy on the ground floor.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="/appointments" className={cn(buttonVariants({ size: "lg" }), "h-12 px-6")}>
+              Book an appointment
+            </Link>
+            <Link
+              href="/emergency"
+              className={cn(
+                buttonVariants({ variant: "destructive", size: "lg" }),
+                "h-12 px-6 bg-destructive text-white hover:bg-destructive/90"
+              )}
             >
-              {hospital.urduLine}
-            </p>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Ruqayya Medical Center is the neighbourhood hospital for Nespak,
-              Township, and families near Ghazi Chowk — 24/7 emergency, named
-              specialists, diagnostics, and a pharmacy in one building.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/appointments" className={cn(buttonVariants({ size: "lg" }), "h-12 px-6")}>
-                Book an appointment
-              </Link>
-              <Link
-                href="/emergency"
-                className={cn(
-                  buttonVariants({ variant: "destructive", size: "lg" }),
-                  "h-12 px-6"
-                )}
-              >
-                24/7 Emergency
-              </Link>
-            </div>
-            <p className="mt-5 text-sm text-muted-foreground">
-              Call{" "}
-              <a className="font-semibold text-primary" href={`tel:${hospital.phoneTel}`}>
-                {hospital.phoneDisplay}
-              </a>{" "}
-              · {hospital.address.line1}
-            </p>
+              24/7 Emergency
+            </Link>
           </div>
-          <div className="rounded-[2rem] bg-primary p-8 text-primary-foreground shadow-2xl shadow-primary/20">
-            <p className="text-xs tracking-[0.2em] uppercase opacity-70">If you need us now</p>
-            <p className="mt-3 font-heading text-3xl">Walk in. Or message the desk.</p>
-            <ul className="mt-6 space-y-3 text-sm leading-relaxed text-primary-foreground/85">
-              <li>Emergency and critical care — every hour of the day</li>
-              <li>In-person clinics and online consultations</li>
-              <li>Surgery, gynecology, medicine, psychology</li>
-              <li>Diagnostics and on-site pharmacy</li>
-            </ul>
-            <div className="mt-8 flex flex-col gap-2">
-              <a
-                href={`tel:${hospital.phoneTel}`}
-                className="rounded-2xl bg-gold px-4 py-3 text-center text-sm font-semibold text-gold-foreground"
-              >
-                Call {hospital.phoneDisplay}
-              </a>
-              <a
-                href={whatsappLink(defaultWhatsappMessage)}
-                className="rounded-2xl bg-primary-foreground/10 px-4 py-3 text-center text-sm font-semibold"
-              >
-                WhatsApp reception
-              </a>
-            </div>
-          </div>
+          <p className="mt-5 text-sm text-white/75">
+            Call{" "}
+            <a className="font-semibold text-gold" href={`tel:${hospital.phoneTel}`}>
+              {hospital.phoneDisplay}
+            </a>{" "}
+            · {hospital.address.line1}
+          </p>
         </div>
       </section>
 
@@ -97,7 +79,7 @@ export default function Home() {
           {[
             ["24/7", "Emergency desk never closes"],
             ["Named specialists", "Surgery, gynae, medicine, psychology"],
-            ["One building", "Clinics, diagnostics, pharmacy"],
+            ["One building", "Clinics, X-ray, lab, pharmacy"],
             ["Two ways in", "Walk in or consult online"],
           ].map(([k, v]) => (
             <div key={k}>
@@ -105,6 +87,63 @@ export default function Home() {
               <p className="mt-1 text-sm text-muted-foreground">{v}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-16">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p className="text-xs font-semibold tracking-[0.2em] text-gold-foreground uppercase">
+              Arrival
+            </p>
+            <h2 className="mt-3 font-heading text-4xl text-ink">
+              You do not guess the door. The desk is granite, the name is on the wall.
+            </h2>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              Reception sits under the Ruqayya Medical Center mark. Prof. Dr.
+              Waseem Iqbal’s clinic is the first door on the left. Chughtai Lab
+              collects here. If it is an emergency, say so — they will not send
+              you to a booking form.
+            </p>
+            <Link
+              href="/inside"
+              className={cn(buttonVariants({ variant: "outline" }), "mt-6 h-11 px-5")}
+            >
+              See inside the center
+            </Link>
+          </div>
+          <div className="overflow-hidden rounded-[2rem] ring-1 ring-foreground/10">
+            <FacilityImage
+              photo={photos.reception}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="aspect-[4/3]"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cream py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div className="max-w-2xl">
+              <p className="text-xs font-semibold tracking-[0.2em] text-gold-foreground uppercase">
+                The rooms
+              </p>
+              <h2 className="mt-2 font-heading text-4xl text-ink">
+                Photographs of this hospital, not a stock corridor.
+              </h2>
+              <p className="mt-3 text-muted-foreground">
+                Tap any frame. These are the consulting rooms, the ward, and the
+                street front patients already recognise.
+              </p>
+            </div>
+            <Link href="/inside" className="text-sm text-primary underline underline-offset-4">
+              Full walkthrough
+            </Link>
+          </div>
+          <div className="mt-10">
+            <FacilityGallery />
+          </div>
         </div>
       </section>
 
@@ -119,7 +158,7 @@ export default function Home() {
           <p className="mt-4 text-muted-foreground leading-relaxed">
             Most people in Nespak currently find Ruqayya through listing apps.
             This site is the hospital speaking for itself: who is on the panel,
-            what happens in an emergency, and how to book without a middleman.
+            what the rooms look like, and how to book without a middleman.
           </p>
         </div>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
@@ -130,11 +169,11 @@ export default function Home() {
             },
             {
               t: "Specialists you can name",
-              d: "Prof. Dr. Mohammad Akmal Shafiq, Dr. Shazia Ali, Dr. Waseem Iqbal, Ms. Najma Badar, and Dr. Faisal — not an anonymous roster.",
+              d: "Prof. Dr. Mohammad Akmal Shafiq, Dr. Shazia Ali, Prof. Dr. Waseem Iqbal, Ms. Najma Badar, and Dr. Faisal — not an anonymous roster.",
             },
             {
               t: "The full visit, finished here",
-              d: "See the doctor, complete investigations, collect medicines, and know when to come back. Fewer city hops.",
+              d: "See the doctor, take a digital X-ray, send labs, collect medicines downstairs, and know when to come back.",
             },
           ].map((item) => (
             <article
@@ -207,7 +246,7 @@ export default function Home() {
       </section>
 
       <section className="border-y bg-card">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 lg:grid-cols-2">
           <div>
             <p className="text-xs font-semibold tracking-[0.2em] text-gold-foreground uppercase">
               Find us
@@ -216,19 +255,20 @@ export default function Home() {
               103-C2, Nespak Housing Scheme
             </h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Sutlej Avenue, Block C-2, near Ghazi Chowk. Parking at the
-              hospital. The emergency entrance is staffed around the clock.
+              Look for the red RUQAYYA CLINIC letters and the digital X-ray
+              board. Hafiz Medicos is the pharmacy on the ground floor. Parking
+              at the hospital. Emergency is staffed around the clock.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a href={mapsDirections} className={cn(buttonVariants(), "h-11 px-5")}>
                 Open directions
               </a>
-              <Link
-                href="/contact"
+              <a
+                href={whatsappLink(defaultWhatsappMessage)}
                 className={cn(buttonVariants({ variant: "outline" }), "h-11 px-5")}
               >
-                Hours & map
-              </Link>
+                WhatsApp the desk
+              </a>
             </div>
           </div>
           <div className="overflow-hidden rounded-3xl ring-1 ring-foreground/10">

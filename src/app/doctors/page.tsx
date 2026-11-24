@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { doctors } from "@/lib/hospital";
+import { photos } from "@/lib/photos";
+import { FacilityImage } from "@/components/facility-image";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta(
@@ -18,8 +20,22 @@ export default function DoctorsPage() {
       </h1>
       <p className="mt-4 max-w-2xl text-muted-foreground leading-relaxed">
         Clinic hours move with theatre lists and on-call cover. Reception will
-        confirm the next slot when you book — in person or online.
+        confirm the next slot when you book — in person or online. These are the
+        rooms, not stock portraits.
       </p>
+      <div className="mt-10 grid grid-cols-3 gap-3">
+        {[photos.consultingRoom, photos.consultantOffice, photos.clinicRoom].map(
+          (photo) => (
+            <div key={photo.id} className="overflow-hidden rounded-2xl">
+              <FacilityImage
+                photo={photo}
+                sizes="33vw"
+                className="aspect-[3/4]"
+              />
+            </div>
+          )
+        )}
+      </div>
       <div className="mt-10 grid gap-4 md:grid-cols-2">
         {doctors.map((d) => (
           <Link

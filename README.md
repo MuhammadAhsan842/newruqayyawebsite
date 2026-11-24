@@ -55,7 +55,7 @@ Hobby limits (bandwidth and build minutes) are far above a hospital brochure sit
 - Create or claim the **Google Business Profile** for Ruqayya Medical Center and point it at the Vercel URL.
 - Post the WhatsApp number and the site on the hospital’s Facebook / Instagram.
 - Ask reception to reply to website WhatsApps the same way they answer the phone.
-- When photos of the facade, theatre, and consultants are available, drop them in `public/media/` and we can place them on the pages.
+- Street, reception, consulting rooms, and ward photographs now live in `public/media/` and appear on Home, Inside, Contact, and Emergency.
 
 ## Content notes
 

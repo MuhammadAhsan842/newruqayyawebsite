@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { doctors, getDoctor } from "@/lib/hospital";
+import { photos } from "@/lib/photos";
 import { AppointmentForm } from "@/components/appointment-form";
+import { FacilityImage } from "@/components/facility-image";
 import { pageMeta } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -45,6 +47,18 @@ export default async function DoctorPage({
           {doctor.name}
         </h1>
         <p className="mt-2 text-lg">{doctor.honorific}</p>
+        <div className="mt-6 overflow-hidden rounded-3xl ring-1 ring-foreground/10">
+          <FacilityImage
+            photo={
+              doctor.slug === "dr-waseem-iqbal"
+                ? photos.reception
+                : photos.consultingRoom
+            }
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="aspect-[4/3]"
+            objectPosition="center"
+          />
+        </div>
         <dl className="mt-6 grid gap-3 text-sm sm:grid-cols-2">
           <div className="rounded-2xl bg-muted p-4">
             <dt className="text-muted-foreground">Qualifications</dt>

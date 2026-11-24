@@ -1,4 +1,5 @@
 import { doctors, hospital, services } from "@/lib/hospital";
+import { photos } from "@/lib/photos";
 
 export function JsonLd() {
   const data = {
@@ -8,7 +9,7 @@ export function JsonLd() {
     description: hospital.description,
     url: "/",
     telephone: hospital.phoneTel,
-    image: "/og.svg",
+    image: [photos.facadeHero.src, photos.reception.src, photos.ward.src],
     address: {
       "@type": "PostalAddress",
       streetAddress: `${hospital.address.line1}, ${hospital.address.line2}`,

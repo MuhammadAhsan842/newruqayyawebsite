@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { hospital } from "@/lib/hospital";
+import { photos } from "@/lib/photos";
+import { FacilityImage } from "@/components/facility-image";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { pageMeta } from "@/lib/seo";
@@ -12,14 +14,26 @@ export const metadata = pageMeta(
 export default function EmergencyPage() {
   return (
     <div className="bg-primary text-primary-foreground">
-      <div className="mx-auto max-w-3xl px-4 py-16 text-center">
-        <p className="text-xs tracking-[0.24em] uppercase opacity-70">
-          Emergency & critical care
-        </p>
-        <h1 className="mt-4 font-heading text-4xl sm:text-6xl">
-          If it cannot wait until morning, neither can we.
-        </h1>
-        <p className="mt-6 text-lg text-primary-foreground/80">
+      <div className="relative min-h-[48vh] overflow-hidden">
+        <FacilityImage
+          photo={photos.ward}
+          fill
+          priority
+          sizes="100vw"
+          objectPosition="center"
+        />
+        <div className="absolute inset-0 bg-primary/70" />
+        <div className="relative mx-auto flex min-h-[48vh] max-w-3xl flex-col justify-end px-4 py-16 text-center">
+          <p className="text-xs tracking-[0.24em] uppercase opacity-80">
+            Emergency & critical care
+          </p>
+          <h1 className="mt-4 font-heading text-4xl sm:text-6xl">
+            If it cannot wait until morning, neither can we.
+          </h1>
+        </div>
+      </div>
+      <div className="mx-auto max-w-3xl px-4 py-14 text-center">
+        <p className="text-lg text-primary-foreground/80">
           Walk in at any hour. Call from the car if you need the desk to be
           ready. Do not use the appointment form for chest pain, collapse,
           severe bleeding, seizures, or breathing difficulty.
