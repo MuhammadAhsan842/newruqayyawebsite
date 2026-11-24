@@ -63,7 +63,7 @@ export const services: Service[] = [
     slug: "outpatient",
     title: "Outpatient Clinics",
     summary:
-      "Same-building OPD for medicine, surgery, orthopedics, gynecology, dermatology, and psychology — so follow-up does not mean a city-wide commute.",
+      "Same-building OPD for medicine, surgery, orthopedics, gynecology, dermatology, physiotherapy, and psychology — so follow-up does not mean a city-wide commute.",
     details: [
       "Scheduled specialist clinics with reception-managed appointments",
       "Walk-in OPD for general complaints during posted hours",
@@ -150,6 +150,19 @@ export const services: Service[] = [
       "Appointments that respect privacy at reception",
     ],
     audience: "People who want mental health care inside a trusted medical center.",
+  },
+  {
+    slug: "physiotherapy",
+    title: "Physiotherapy & Pain Management",
+    summary:
+      "Movement, joint, and pain care with Dr. Faisal — DPT and orthopedic manual therapy, with a postgraduate diploma in pain management.",
+    details: [
+      "Assessment and treatment of musculoskeletal pain and stiffness",
+      "Orthopedic manual therapy after injury, surgery, or long-standing joint problems",
+      "Pain-management plans that sit beside the orthopedic and medical clinics",
+      "Clinic hours confirmed at reception",
+    ],
+    audience: "Patients who need skilled hands-on therapy without leaving Nespak.",
   },
   {
     slug: "diagnostics",
@@ -343,20 +356,21 @@ export const doctors: Doctor[] = [
   {
     slug: "dr-faisal",
     name: "Dr. Faisal",
-    honorific: "Consultant",
-    specialty: "Specialist Consultant",
-    credentials: "On the Ruqayya Medical Center consultant panel",
-    experience: "Ask reception for current clinic days",
-    clinic: "Confirm specialty clinic timing with the front desk when you book.",
-    bio: "Dr. Faisal consults at Ruqayya Medical Center as part of the specialist team. Reception will match you to the right clinic and tell you which documents to bring.",
+    honorific: "Physiotherapist · Pain Management",
+    specialty: "Physiotherapy, Orthopedic Manual Therapy & Pain Management",
+    credentials:
+      "DPT (UOL), MS (Orthopedic Manual Therapy) UOL, PGD (Pain Management) HSA Islamabad",
+    experience: "Doctor of Physical Therapy",
+    clinic: "Physiotherapy clinic hours confirmed at reception.",
+    bio: "Dr. Faisal provides physiotherapy and pain management at Ruqayya Medical Center. He holds a Doctor of Physical Therapy and an MS in Orthopedic Manual Therapy from the University of Lahore, with a postgraduate diploma in pain management from HSA Islamabad — so joint pain, stiffness after injury, and rehabilitation can be treated in the same building as X-ray and the orthopedic clinic.",
     focus: [
-      "Consultant clinic at RMC",
-      "In-person and, where offered, online review",
-      "Coordinated care with diagnostics and pharmacy",
+      "Physiotherapy and rehabilitation",
+      "Orthopedic manual therapy",
+      "Pain management for musculoskeletal conditions",
     ],
     portrait: {
       src: "/media/dr-faisal.jpg",
-      alt: "Dr. Faisal, consultant at Ruqayya Medical Center",
+      alt: "Dr. Faisal, physiotherapist and pain-management specialist at Ruqayya Medical Center",
       width: 1159,
       height: 1357,
     },
