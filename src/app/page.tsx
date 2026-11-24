@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div>
       <section className="grid lg:min-h-[78vh] lg:grid-cols-2">
-        <div className="relative order-1 h-[46vh] min-h-64 lg:order-2 lg:h-auto">
+        <div className="relative order-1 h-[52vh] min-h-72 lg:order-2 lg:min-h-[78vh]">
           <FacilityImage
             photo={photos.facadeHero}
             fill
@@ -75,6 +75,29 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="grid md:grid-cols-2">
+        <figure className="relative min-h-[48vh]">
+          <FacilityImage
+            photo={photos.reception}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 px-5 py-5 font-heading text-2xl text-white">
+            Reception
+          </figcaption>
+        </figure>
+        <figure className="relative min-h-[48vh]">
+          <FacilityImage
+            photo={photos.opdWaiting}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 px-5 py-5 font-heading text-2xl text-white">
+            OPD
+          </figcaption>
+        </figure>
+      </section>
+
       <section className="border-y bg-card">
         <div className="mx-auto grid max-w-6xl gap-6 px-4 py-8 sm:grid-cols-2 lg:grid-cols-4">
           {[
@@ -112,22 +135,6 @@ export default function Home() {
             >
               See inside the center
             </Link>
-          </div>
-          <div className="grid gap-3">
-            <div className="overflow-hidden rounded-[2rem] ring-1 ring-foreground/10">
-              <FacilityImage
-                photo={photos.reception}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="aspect-[4/3]"
-              />
-            </div>
-            <div className="overflow-hidden rounded-[2rem] ring-1 ring-foreground/10">
-              <FacilityImage
-                photo={photos.opdWaiting}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="aspect-[4/3]"
-              />
-            </div>
           </div>
         </div>
       </section>

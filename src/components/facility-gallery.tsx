@@ -43,6 +43,7 @@ export function FacilityGallery() {
               src={photo.src}
               alt={photo.alt}
               fill
+              unoptimized
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover transition duration-500 group-hover:scale-[1.03]"
             />
@@ -74,6 +75,7 @@ export function FacilityGallery() {
                   alt={active.alt}
                   width={active.width}
                   height={active.height}
+                  unoptimized
                   className="h-auto w-full"
                 />
               </div>

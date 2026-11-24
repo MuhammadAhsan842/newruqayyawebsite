@@ -13,11 +13,11 @@ export default function InsidePage() {
     <div>
       <section className="relative h-[42vh] min-h-72 overflow-hidden">
         <FacilityImage
-          photo={photos.facadeHero}
+          photo={photos.reception}
           fill
           priority
           sizes="100vw"
-          objectPosition="center 40%"
+          objectPosition="center"
         />
         <div className="absolute inset-0 bg-ink/45" />
         <div className="relative mx-auto flex h-full max-w-6xl items-end px-4 pb-10">

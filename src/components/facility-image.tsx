@@ -27,19 +27,23 @@ export function FacilityImage({
         priority={priority}
         className={cn("object-cover", className)}
         style={{ objectPosition }}
+        unoptimized
       />
     );
   }
+
   return (
-    <Image
-      src={photo.src}
-      alt={photo.alt}
-      width={photo.width}
-      height={photo.height}
-      sizes={sizes}
-      priority={priority}
-      className={cn("h-full w-full object-cover", className)}
-      style={{ objectPosition }}
-    />
+    <div className={cn("relative w-full overflow-hidden", className)}>
+      <Image
+        src={photo.src}
+        alt={photo.alt}
+        fill
+        sizes={sizes}
+        priority={priority}
+        className="object-cover"
+        style={{ objectPosition }}
+        unoptimized
+      />
+    </div>
   );
 }

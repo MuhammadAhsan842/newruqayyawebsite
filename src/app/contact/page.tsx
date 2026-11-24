@@ -21,7 +21,7 @@ export default function ContactPage() {
         <FacilityImage
           photo={photos.reception}
           sizes="100vw"
-          className="max-h-[34rem] object-cover"
+          className="aspect-[4/3]"
           objectPosition="center"
         />
       </div>
@@ -34,7 +34,7 @@ export default function ContactPage() {
         <FacilityImage
           photo={photos.opdWaiting}
           sizes="100vw"
-          className="max-h-[34rem] object-cover"
+          className="aspect-[4/3]"
         />
       </div>
       <div className="mt-10 grid gap-8 lg:grid-cols-2">
