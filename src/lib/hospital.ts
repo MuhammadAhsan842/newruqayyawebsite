@@ -214,6 +214,27 @@ export type Doctor = {
 
 export const doctors: Doctor[] = [
   {
+    slug: "dr-waseem-iqbal",
+    name: "Prof. Dr. Waseem Iqbal",
+    honorific: "Professor · Consultant Physician",
+    specialty: "General Medicine",
+    credentials: "MBBS · Consultant Physician",
+    experience: "Physician in adult medicine",
+    clinic: "Medicine clinic off the main reception; hours confirmed at the desk.",
+    bio: "Prof. Dr. Waseem Iqbal is the consultant physician whose name is on the reception door. He sees adult medical patients for everyday illness and longer-term conditions — fever, chest complaints, diabetes, blood pressure, and the investigations that should sit behind a clear plan.",
+    focus: [
+      "Adult general medicine",
+      "Chronic disease follow-up",
+      "Acute medical assessment",
+    ],
+    portrait: {
+      src: "/media/dr-waseem.jpg",
+      alt: "Prof. Dr. Waseem Iqbal, consultant physician at Ruqayya Medical Center",
+      width: 1088,
+      height: 1280,
+    },
+  },
+  {
     slug: "prof-dr-mohammad-akmal-shafiq",
     name: "Prof. Dr. Mohammad Akmal Shafiq",
     honorific: "Professor of Surgery",
@@ -297,21 +318,6 @@ export const doctors: Doctor[] = [
       width: 800,
       height: 800,
     },
-  },
-  {
-    slug: "dr-waseem-iqbal",
-    name: "Prof. Dr. Waseem Iqbal",
-    honorific: "Professor · Consultant Physician",
-    specialty: "General Medicine",
-    credentials: "MBBS · Consultant Physician",
-    experience: "Physician in adult medicine",
-    clinic: "Medicine clinic off the main reception; hours confirmed at the desk.",
-    bio: "Prof. Dr. Waseem Iqbal is the consultant physician whose name is on the reception door. He sees adult medical patients for everyday illness and longer-term conditions — fever, chest complaints, diabetes, blood pressure, and the investigations that should sit behind a clear plan.",
-    focus: [
-      "Adult general medicine",
-      "Chronic disease follow-up",
-      "Acute medical assessment",
-    ],
   },
   {
     slug: "ms-najma-badar",

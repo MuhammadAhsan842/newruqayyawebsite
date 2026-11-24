@@ -189,7 +189,7 @@ export default function Home() {
             },
             {
               t: "Specialists you can name",
-              d: "Prof. Dr. Mohammad Akmal Shafiq, Dr. Waqas Ahmad Bhullar, Dr. Shazia Ali, Dr. Asim Suhail, Prof. Dr. Waseem Iqbal, Ms. Najma Badar, and Dr. Faisal — not an anonymous roster.",
+              d: "Prof. Dr. Waseem Iqbal, Prof. Dr. Mohammad Akmal Shafiq, Dr. Waqas Ahmad Bhullar, Dr. Shazia Ali, Dr. Asim Suhail, Ms. Najma Badar, and Dr. Faisal — not an anonymous roster.",
             },
             {
               t: "The full visit, finished here",

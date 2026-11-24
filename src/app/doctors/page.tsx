@@ -6,7 +6,7 @@ import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta(
   "Doctors",
-  "Meet the Ruqayya Medical Center panel: Prof. Dr. Mohammad Akmal Shafiq, Dr. Waqas Ahmad Bhullar, Dr. Shazia Ali, Dr. Asim Suhail, Dr. Waseem Iqbal, Ms. Najma Badar, and Dr. Faisal."
+  "Meet the Ruqayya Medical Center panel: Prof. Dr. Waseem Iqbal, Prof. Dr. Mohammad Akmal Shafiq, Dr. Waqas Ahmad Bhullar, Dr. Shazia Ali, Dr. Asim Suhail, Ms. Najma Badar, and Dr. Faisal."
 );
 
 export default function DoctorsPage() {
@@ -34,7 +34,7 @@ export default function DoctorsPage() {
               doctor={d}
               sizes="(max-width: 640px) 100vw, 176px"
               className="aspect-[4/5] w-full rounded-2xl"
-              priority={d.slug === "prof-dr-mohammad-akmal-shafiq"}
+              priority={d.slug === "dr-waseem-iqbal"}
             />
             <div className="flex flex-col justify-center">
               <p className="text-xs tracking-[0.16em] text-muted-foreground uppercase">
