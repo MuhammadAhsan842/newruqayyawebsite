@@ -63,10 +63,11 @@ export const services: Service[] = [
     slug: "outpatient",
     title: "Outpatient Clinics",
     summary:
-      "Same-building OPD for medicine, surgery, gynecology, and psychology — so follow-up does not mean a city-wide commute.",
+      "Same-building OPD for medicine, surgery, orthopedics, gynecology, and psychology — so follow-up does not mean a city-wide commute.",
     details: [
       "Scheduled specialist clinics with reception-managed appointments",
       "Walk-in OPD for general complaints during posted hours",
+      "Orthopedics, trauma, and joint-replacement clinic with Dr. Waqas Ahmad Bhullar",
       "Continuity of care: labs, pharmacy, and review in one place",
       "Clear next-visit instructions before you leave the desk",
     ],
@@ -84,6 +85,19 @@ export const services: Service[] = [
       "Emergency surgical cover coordinated with the 24/7 desk",
     ],
     audience: "Patients who want an experienced FCPS surgeon without travelling across Lahore.",
+  },
+  {
+    slug: "orthopedics",
+    title: "Orthopedics, Trauma & Joint Replacement",
+    summary:
+      "Bone, joint, and injury care with Dr. Waqas Ahmad Bhullar — fractures, trauma, and arthroplasty in the same hospital as X-ray and pharmacy.",
+    details: [
+      "Fracture and trauma assessment, including injuries that cannot wait for a weekday downtown list",
+      "Arthroplasty (joint replacement) consultation and follow-up",
+      "Clinic review of pain, stiffness, and post-injury mobility",
+      "Digital X-ray on site, then a clear next step — rest, plaster, or theatre",
+    ],
+    audience: "Patients with bone and joint problems who need a named orthopedic surgeon in Nespak.",
   },
   {
     slug: "gynecology",
@@ -204,6 +218,27 @@ export const doctors: Doctor[] = [
       alt: "Prof. Dr. Mohammad Akmal Shafiq, general and laparoscopic surgeon at Ruqayya Medical Center",
       width: 680,
       height: 680,
+    },
+  },
+  {
+    slug: "dr-waqas-ahmad-bhullar",
+    name: "Dr. Waqas Ahmad Bhullar",
+    honorific: "Consultant Orthopedic, Trauma & Arthroplasty Surgeon",
+    specialty: "Orthopedics, Trauma & Joint Replacement",
+    credentials: "Consultant Orthopedic, Trauma & Arthroplasty Surgeon",
+    experience: "Consultant orthopedic surgeon",
+    clinic: "Orthopedic clinic hours confirmed at reception.",
+    bio: "Dr. Waqas Ahmad Bhullar sees bone, joint, and injury patients at Ruqayya Medical Center. His clinic covers trauma, fractures, and arthroplasty — so a fall, a painful hip, or a knee that will not last the year can be assessed here, with digital X-ray in the same building.",
+    focus: [
+      "Trauma and fracture care",
+      "Arthroplasty (joint replacement) consultation",
+      "Orthopedic clinic follow-up after injury or surgery",
+    ],
+    portrait: {
+      src: "/media/dr-waqas.jpg",
+      alt: "Dr. Waqas Ahmad Bhullar, consultant orthopedic, trauma and arthroplasty surgeon at Ruqayya Medical Center",
+      width: 800,
+      height: 800,
     },
   },
   {

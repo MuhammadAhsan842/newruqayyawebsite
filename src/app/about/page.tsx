@@ -50,7 +50,8 @@ export default function AboutPage() {
         </p>
         <p>
           The consultant panel includes Prof. Dr. Mohammad Akmal Shafiq, Dr.
-          Shazia Ali, Prof. Dr. Waseem Iqbal, Ms. Najma Badar, and Dr. Faisal.
+          Waqas Ahmad Bhullar, Dr. Shazia Ali, Prof. Dr. Waseem Iqbal, Ms.
+          Najma Badar, and Dr. Faisal.
           Clinic lists change with operating days — reception always has the
           current one.
         </p>
