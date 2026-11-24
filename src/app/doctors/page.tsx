@@ -19,9 +19,9 @@ export default function DoctorsPage() {
         Doctors whose names patients already know.
       </h1>
       <p className="mt-4 max-w-2xl text-muted-foreground leading-relaxed">
-        Each card is a named consultant, with a portrait where we have one and
-        the clinic note that belongs to them. Hours move with theatre lists —
-        reception confirms the next slot when you book.
+        Each card is a named consultant with their portrait and clinic note.
+        Hours move with theatre lists — reception confirms the next slot when
+        you book.
       </p>
       <div className="mt-10 grid gap-4">
         {doctors.map((d) => (
