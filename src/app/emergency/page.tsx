@@ -22,7 +22,7 @@ export default function EmergencyPage() {
           sizes="100vw"
           objectPosition="center"
         />
-        <div className="absolute inset-0 bg-primary/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/55 to-primary/25" />
         <div className="relative mx-auto flex min-h-[48vh] max-w-3xl flex-col justify-end px-4 py-16 text-center">
           <p className="text-xs tracking-[0.24em] uppercase opacity-80">
             Emergency & critical care

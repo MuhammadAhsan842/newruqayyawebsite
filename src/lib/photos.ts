@@ -66,11 +66,11 @@ export const photos = {
   ward: {
     id: "ward",
     src: "/media/ward.jpg",
-    alt: "Inpatient ward with curtained beds, IV stands, and monitoring equipment",
+    alt: "Emergency and inpatient beds at Ruqayya Medical Center: blue mattresses, privacy curtains, IV stands, and a monitoring trolley",
     caption: "If you need a bed, this is the ward: curtained bays, IV stands, and monitoring at the bedside.",
     place: "Ward",
-    width: 1351,
-    height: 1800,
+    width: 1448,
+    height: 1086,
   },
   observation: {
     id: "observation",
