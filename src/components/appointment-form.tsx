@@ -1,7 +1,15 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { doctors, hospital, services, whatsappLink } from "@/lib/hospital";
+import {
+  bookingMessage,
+  doctors,
+  dummyBooking,
+  emailLink,
+  hospital,
+  services,
+  whatsappLink,
+} from "@/lib/hospital";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,63 +20,80 @@ const visitTypes = ["In-person visit", "Online consultation"] as const;
 type Props = {
   presetDoctor?: string;
   presetService?: string;
+  startAsDummy?: boolean;
 };
 
-export function AppointmentForm({ presetDoctor, presetService }: Props) {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [doctor, setDoctor] = useState(presetDoctor ?? "");
-  const [service, setService] = useState(presetService ?? "");
+export function AppointmentForm({
+  presetDoctor,
+  presetService,
+  startAsDummy = false,
+}: Props) {
+  const seed = startAsDummy ? dummyBooking : null;
+  const [name, setName] = useState(seed?.name ?? "");
+  const [phone, setPhone] = useState(seed?.phone ?? "");
+  const [doctor, setDoctor] = useState(seed?.doctor ?? presetDoctor ?? "");
+  const [service, setService] = useState(seed?.service ?? presetService ?? "");
   const [visitType, setVisitType] = useState<(typeof visitTypes)[number]>(
-    "In-person visit"
+    seed?.visitType ?? "In-person visit"
   );
-  const [when, setWhen] = useState("");
-  const [notes, setNotes] = useState("");
+  const [when, setWhen] = useState(seed?.when ?? "");
+  const [notes, setNotes] = useState(seed?.notes ?? "");
   const [error, setError] = useState("");
 
-  const message = useMemo(() => {
-    return [
-      "Assalamualaikum, I would like to book at Ruqayya Medical Center.",
-      `Name: ${name || "—"}`,
-      `Phone: ${phone || "—"}`,
-      `Visit: ${visitType}`,
-      `Doctor: ${doctor || "First available"}`,
-      `Service: ${service || "Please advise"}`,
-      `Preferred time: ${when || "Soonest available"}`,
-      notes ? `Notes: ${notes}` : null,
-    ]
-      .filter(Boolean)
-      .join("\n");
-  }, [name, phone, doctor, service, visitType, when, notes]);
+  const message = useMemo(
+    () =>
+      bookingMessage({
+        name: name || "—",
+        phone: phone || "—",
+        visitType,
+        doctor: doctor || "First available",
+        service: service || "Please advise",
+        when: when || "Soonest available",
+        notes,
+      }),
+    [name, phone, doctor, service, visitType, when, notes]
+  );
 
-  function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
+  function requireContact() {
     if (!name.trim() || !phone.trim()) {
       setError("Please add your name and a phone number we can return.");
-      return;
+      return false;
     }
     setError("");
+    return true;
+  }
+
+  function sendWhatsApp() {
+    if (!requireContact()) return;
     const url = whatsappLink(message);
     const opened = window.open(url, "_blank", "noopener,noreferrer");
-    if (!opened) {
-      window.location.href = url;
-    }
+    if (!opened) window.location.href = url;
+  }
+
+  function sendEmail() {
+    if (!requireContact()) return;
+    window.location.href = emailLink(
+      `Appointment request — ${name} — ${doctor || "first available"}`,
+      message
+    );
   }
 
   return (
     <form
-      onSubmit={onSubmit}
+      onSubmit={(e) => {
+        e.preventDefault();
+        sendWhatsApp();
+      }}
       className="space-y-5 rounded-3xl bg-card p-6 ring-1 ring-foreground/10 sm:p-8"
     >
       <div>
         <p className="text-xs font-semibold tracking-[0.2em] text-gold-foreground uppercase">
-          Request a slot
+          WhatsApp the desk
         </p>
-        <h2 className="mt-2 font-heading text-3xl text-ink">Book an appointment</h2>
+        <h2 className="mt-2 font-heading text-3xl text-ink">Book by message</h2>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          This sends a WhatsApp message to the hospital desk at{" "}
-          {hospital.phoneDisplay}. Reception confirms the time. No app login and
-          no payment on this page.
+          Send opens WhatsApp to {hospital.whatsappDisplay}. Email goes to{" "}
+          {hospital.email}. Nothing is stored on this website.
         </p>
       </div>
 
@@ -130,7 +155,7 @@ export function AppointmentForm({ presetDoctor, presetService }: Props) {
             id="when"
             value={when}
             onChange={(e) => setWhen(e.target.value)}
-            placeholder="Tomorrow evening, or a date"
+            placeholder="Tonight, or a date"
             className="h-10"
           />
         </div>
@@ -177,20 +202,31 @@ export function AppointmentForm({ presetDoctor, presetService }: Props) {
           className="min-h-24"
         />
       </div>
-      <div className="flex flex-col gap-3 sm:flex-row">
+      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
         <Button nativeButton type="submit" size="lg" className="h-11 px-5">
           Send on WhatsApp
         </Button>
         <Button
+          nativeButton
           type="button"
           variant="outline"
+          size="lg"
+          className="h-11 px-5"
+          onClick={sendEmail}
+        >
+          Email the desk
+        </Button>
+        <Button
+          nativeButton
+          type="button"
+          variant="ghost"
           size="lg"
           className="h-11 px-5"
           onClick={() => {
             window.location.href = `tel:${hospital.phoneTel}`;
           }}
         >
-          Call reception
+          Call {hospital.phoneDisplay}
         </Button>
       </div>
       <p className="text-xs text-muted-foreground">

@@ -12,7 +12,7 @@ export function WhatsappFloat() {
         ✦
       </span>
       WhatsApp
-      <span className="hidden sm:inline">· {hospital.phoneDisplay}</span>
+      <span className="hidden sm:inline">· {hospital.whatsappDisplay}</span>
     </a>
   );
 }

@@ -19,7 +19,9 @@ export const hospital = {
   },
   phoneDisplay: "0300 9400020",
   phoneTel: "+923009400020",
-  whatsapp: "923009400020",
+  whatsapp: "923124567497",
+  whatsappDisplay: "0312 4567497",
+  email: "ruqayyahospital786@gmail.com",
   hours: "Open 24 hours — emergency and critical care never close",
   clinicHours:
     "Specialist clinics run on posted schedules. Reception confirms the next available slot.",
@@ -30,7 +32,7 @@ export const nav = [
   { href: "/services", label: "Services" },
   { href: "/doctors", label: "Doctors" },
   { href: "/inside", label: "Inside" },
-  { href: "/appointments", label: "Appointments" },
+  { href: "/appointments", label: "Book" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Visit us" },
 ] as const;
@@ -264,8 +266,47 @@ export function whatsappLink(message: string) {
   return `https://wa.me/${hospital.whatsapp}?text=${encodeURIComponent(message)}`;
 }
 
+export function emailLink(subject: string, body: string) {
+  return `mailto:${hospital.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 export const defaultWhatsappMessage =
   "Assalamualaikum, I would like to book an appointment at Ruqayya Medical Center.";
+
+export const dummyBooking = {
+  name: "Ahsan Ikram",
+  phone: "0312 4567497",
+  visitType: "In-person visit" as const,
+  doctor: "Dr. Shazia Ali",
+  service: "Gynecology",
+  when: "Tonight — night consultation",
+  notes: "Dummy / test booking from the website.",
+};
+
+export function bookingMessage(fields: {
+  name: string;
+  phone: string;
+  visitType: string;
+  doctor: string;
+  service: string;
+  when: string;
+  notes?: string;
+}) {
+  return [
+    "Assalamualaikum, I would like to book at Ruqayya Medical Center.",
+    `Name: ${fields.name}`,
+    `Phone: ${fields.phone}`,
+    `Visit: ${fields.visitType}`,
+    `Doctor: ${fields.doctor}`,
+    `Service: ${fields.service}`,
+    `Preferred time: ${fields.when}`,
+    fields.notes ? `Notes: ${fields.notes}` : null,
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
+export const dummyBookingMessage = bookingMessage(dummyBooking);
 
 export const mapsDirections = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
   hospital.address.mapsQuery

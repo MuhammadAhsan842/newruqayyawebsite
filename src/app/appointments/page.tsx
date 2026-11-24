@@ -1,44 +1,65 @@
 import { AppointmentForm } from "@/components/appointment-form";
 import { FacilityImage } from "@/components/facility-image";
-import { hospital, whatsappLink, defaultWhatsappMessage } from "@/lib/hospital";
+import {
+  dummyBooking,
+  dummyBookingMessage,
+  emailLink,
+  hospital,
+  whatsappLink,
+} from "@/lib/hospital";
 import { photos } from "@/lib/photos";
 import { pageMeta } from "@/lib/seo";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export const metadata = pageMeta(
-  "Book an appointment",
-  "Book an in-person visit or online consultation at Ruqayya Medical Center by WhatsApp or phone. Reception confirms your slot."
+  "Book a visit",
+  "Book Ruqayya Medical Center by WhatsApp or email. No login and no payment on this page."
 );
 
 export default function AppointmentsPage() {
+  const dummyWhatsapp = whatsappLink(dummyBookingMessage);
+  const dummyEmail = emailLink(
+    `Appointment request — ${dummyBooking.name} — ${dummyBooking.doctor}`,
+    dummyBookingMessage
+  );
+
   return (
     <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 lg:grid-cols-[0.85fr_1.15fr]">
       <div>
         <p className="text-xs font-semibold tracking-[0.2em] text-gold-foreground uppercase">
-          Appointments
+          Book on WhatsApp
         </p>
         <h1 className="mt-3 font-heading text-4xl text-ink sm:text-5xl">
-          Tell the desk who you need. They will confirm the time.
+          Message the desk. Do not wait on a booking portal.
         </h1>
         <p className="mt-4 leading-relaxed text-muted-foreground">
-          There is no paid booking engine on this site. Your request opens
-          WhatsApp to {hospital.phoneDisplay} with the details filled in. That
-          is the same number families already call — it works on a free
-          hosting plan, and the hospital does not need extra software.
+          WhatsApp is the main path — it reaches {hospital.whatsappDisplay}{" "}
+          immediately. Email to {hospital.email} is the backup if WhatsApp is
+          not installed. Emergency still uses {hospital.phoneDisplay}.
         </p>
-        <ol className="mt-8 space-y-4 text-sm">
-          {[
-            "Choose in-person or online, and a doctor if you know one.",
-            "Send the WhatsApp. Reception replies with the next available slot.",
-            "Arrive a few minutes early, or join the call at the agreed time.",
-          ].map((step, i) => (
-            <li key={step} className="flex gap-3">
-              <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs text-primary-foreground">
-                {i + 1}
-              </span>
-              <span className="pt-1">{step}</span>
-            </li>
-          ))}
-        </ol>
+        <div className="mt-8 flex flex-col gap-3">
+          <a
+            href={dummyWhatsapp}
+            target="_blank"
+            rel="noreferrer"
+            className={cn(buttonVariants({ size: "lg" }), "h-12 px-5")}
+          >
+            Send test booking on WhatsApp
+          </a>
+          <a
+            href={dummyEmail}
+            className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-12 px-5")}
+          >
+            Send the same test by email
+          </a>
+        </div>
+        <p className="mt-4 rounded-2xl bg-muted px-4 py-3 text-sm leading-relaxed">
+          Test booking: <strong>{dummyBooking.name}</strong> for{" "}
+          <strong>{dummyBooking.doctor}</strong>, {dummyBooking.when.toLowerCase()}{" "}
+          ({dummyBooking.service}). Tap the green button, then Send in WhatsApp
+          so the message lands on {hospital.whatsappDisplay}.
+        </p>
         <div className="mt-8 overflow-hidden rounded-3xl ring-1 ring-foreground/10">
           <FacilityImage
             photo={photos.reception}
@@ -46,22 +67,8 @@ export default function AppointmentsPage() {
             className="aspect-[4/3]"
           />
         </div>
-        <p className="mt-8 text-sm">
-          Prefer to speak?{" "}
-          <a className="font-semibold text-primary" href={`tel:${hospital.phoneTel}`}>
-            Call {hospital.phoneDisplay}
-          </a>{" "}
-          or{" "}
-          <a
-            className="font-semibold text-primary"
-            href={whatsappLink(defaultWhatsappMessage)}
-          >
-            open WhatsApp
-          </a>
-          .
-        </p>
       </div>
-      <AppointmentForm />
+      <AppointmentForm startAsDummy />
     </div>
   );
 }

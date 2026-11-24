@@ -9,6 +9,7 @@ export function JsonLd() {
     description: hospital.description,
     url: "/",
     telephone: hospital.phoneTel,
+    email: hospital.email,
     image: [photos.facadeHero.src, photos.reception.src, photos.ward.src],
     address: {
       "@type": "PostalAddress",

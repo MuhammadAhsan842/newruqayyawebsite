@@ -54,13 +54,26 @@ export default function ContactPage() {
             </a>
           </div>
           <div className="rounded-3xl bg-card p-6 ring-1 ring-foreground/10">
-            <h2 className="font-heading text-2xl">Phone & WhatsApp</h2>
-            <p className="mt-3">
+            <h2 className="font-heading text-2xl">Phone, WhatsApp & email</h2>
+            <p className="mt-3 text-sm text-muted-foreground">Hospital line</p>
+            <p>
               <a className="text-xl font-semibold" href={`tel:${hospital.phoneTel}`}>
                 {hospital.phoneDisplay}
               </a>
             </p>
-            <p className="mt-2 text-sm text-muted-foreground">{hospital.hours}</p>
+            <p className="mt-3 text-sm text-muted-foreground">WhatsApp bookings</p>
+            <p>
+              <a className="text-xl font-semibold" href={`https://wa.me/${hospital.whatsapp}`}>
+                {hospital.whatsappDisplay}
+              </a>
+            </p>
+            <p className="mt-3 text-sm text-muted-foreground">Email</p>
+            <p>
+              <a className="font-semibold" href={`mailto:${hospital.email}`}>
+                {hospital.email}
+              </a>
+            </p>
+            <p className="mt-3 text-sm text-muted-foreground">{hospital.hours}</p>
             <p className="mt-2 text-sm text-muted-foreground">{hospital.clinicHours}</p>
           </div>
         </div>

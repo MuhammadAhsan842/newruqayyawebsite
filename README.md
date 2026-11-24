@@ -8,7 +8,7 @@ Patients can read services, meet the consultant panel, request an in-person or o
 
 Aggregator apps (Marham, oladoc) currently own the hospital’s public face. This site is the hospital’s own brand: named specialists, a neighbourhood address, a phone that is also WhatsApp, and pages Google can rank for “emergency Nespak / Ghazi Chowk / Township”.
 
-Booking is intentionally simple. The form opens WhatsApp to **0300 9400020** with the patient’s details. That costs nothing on Vercel’s free plan and does not need a database.
+Booking is WhatsApp-first to **0312 4567497**, with **ruqayyahospital786@gmail.com** as backup. The hospital voice line for emergency remains **0300 9400020**. Nothing is stored on the server.
 
 ## Run locally
 
@@ -42,10 +42,10 @@ There is **no trustworthy free `.pk` / `.com` registrar** anymore (Freenom is go
 | --- | --- |
 | Hosting + HTTPS | Vercel Hobby |
 | Domain | `*.vercel.app` |
-| Appointments | WhatsApp click-to-chat |
+| Appointments | WhatsApp to 0312 4567497 |
 | Phone | `tel:` links |
 | Maps | Google Maps embed |
-| Email inbox | Not required; WhatsApp is the desk |
+| Email inbox | mailto: ruqayyahospital786@gmail.com |
 | Database / auth | None |
 
 Hobby limits (bandwidth and build minutes) are far above a hospital brochure site.

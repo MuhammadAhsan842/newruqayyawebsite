@@ -26,9 +26,21 @@ export function SiteFooter() {
           </p>
           <a
             href={`tel:${hospital.phoneTel}`}
-            className="mt-3 inline-block text-sm font-medium underline underline-offset-4"
+            className="mt-3 block text-sm font-medium underline underline-offset-4"
           >
-            {hospital.phoneDisplay}
+            Call {hospital.phoneDisplay}
+          </a>
+          <a
+            href={`https://wa.me/${hospital.whatsapp}`}
+            className="mt-1 block text-sm font-medium underline underline-offset-4"
+          >
+            WhatsApp {hospital.whatsappDisplay}
+          </a>
+          <a
+            href={`mailto:${hospital.email}`}
+            className="mt-1 block text-sm font-medium underline underline-offset-4"
+          >
+            {hospital.email}
           </a>
         </div>
         <div>
