@@ -55,12 +55,13 @@ Hobby limits (bandwidth and build minutes) are far above a hospital brochure sit
 - Create or claim the **Google Business Profile** for Ruqayya Medical Center and point it at the Vercel URL.
 - Post the WhatsApp number and the site on the hospital’s Facebook / Instagram.
 - Ask reception to reply to website WhatsApps the same way they answer the phone.
-- Street, reception, consulting rooms, and ward photographs now live in `public/media/` and appear on Home, Inside, Contact, and Emergency.
+- Street, reception, OPD, digital X-ray, Hafiz Medicos, ward, and consultant portraits live in `public/media/` and `public/brand/`.
 
 ## Content notes
 
 - Address on this site follows the brief: **103-C2, Nespak Housing Scheme, Lahore**. Public listings sometimes show 103-C1 / Sutlej Avenue; confirm the plaque with the hospital if needed.
-- **Dr. Faisal** is listed as a consultant because he is on the hospital’s named panel. His specialty was not published on aggregator sites — reception can supply the exact title.
+- Consultant panel (as supplied): Prof. Dr. Waseem Iqbal; Prof. Dr. Mohammad Akmal Shafiq; Dr. Waqas Ahmad Bhullar; Dr. Shazia Ali; Dr. Asim Suhail; Ms. Najma Badar; Dr. Faisal (DPT, MS Orthopedic Manual Therapy, PGD Pain Management).
+- **Hafiz Medicos** is the owner-run ground-floor pharmacy. **Chughtai Lab** is the pathology collection partner at reception.
 - Clinic times on aggregator sites drift. The site tells patients to confirm with reception rather than inventing a timetable.
 
 ## Stack
