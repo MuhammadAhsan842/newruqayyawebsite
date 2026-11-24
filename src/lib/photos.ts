@@ -12,11 +12,11 @@ export const photos = {
   facadeHero: {
     id: "facade",
     src: "/media/facade-hero.jpg",
-    alt: "Ruqayya Medical Center street front on Sutlej Avenue, with Ruqayya Clinic signage, digital X-ray, and the ground-floor pharmacy",
-    caption: "The building you look for on Sutlej Avenue — Ruqayya Clinic, digital X-ray, pharmacy at street level.",
+    alt: "Ruqayya Medical Center at night on Sutlej Avenue: lit RUQAYYA MEDICAL CENTER and RUQAYYA CLINIC signs, Hafiz Medicos at street level, digital X-ray board, and parking in front",
+    caption: "The building at night — Ruqayya Medical Center, Ruqayya Clinic, Hafiz Medicos, and parking on Sutlej Avenue.",
     place: "Street",
-    width: 2560,
-    height: 1344,
+    width: 1448,
+    height: 1086,
   },
   reception: {
     id: "reception",

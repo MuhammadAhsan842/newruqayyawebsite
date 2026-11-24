@@ -31,7 +31,7 @@ export default function Home() {
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 50vw"
-            objectPosition="center 40%"
+            objectPosition="center"
           />
         </div>
         <div className="order-2 flex flex-col justify-center bg-cream px-4 py-12 lg:order-1 lg:px-12 xl:px-16">
