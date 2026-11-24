@@ -1,0 +1,60 @@
+import { hospital, mapsDirections, mapsEmbed } from "@/lib/hospital";
+import { pageMeta } from "@/lib/seo";
+
+export const metadata = pageMeta(
+  "Visit us",
+  "Find Ruqayya Medical Center at 103-C2, Nespak Housing Scheme, Lahore, near Ghazi Chowk. Open 24 hours. Call 0300 9400020."
+);
+
+export default function ContactPage() {
+  return (
+    <div className="mx-auto max-w-6xl px-4 py-14">
+      <p className="text-xs font-semibold tracking-[0.2em] text-gold-foreground uppercase">
+        Location
+      </p>
+      <h1 className="mt-3 font-heading text-4xl text-ink sm:text-5xl">
+        Come to 103-C2. We are already open.
+      </h1>
+      <div className="mt-10 grid gap-8 lg:grid-cols-2">
+        <div className="space-y-6">
+          <div className="rounded-3xl bg-card p-6 ring-1 ring-foreground/10">
+            <h2 className="font-heading text-2xl">Address</h2>
+            <p className="mt-3 leading-relaxed">
+              {hospital.address.line1}
+              <br />
+              {hospital.address.line2}
+              <br />
+              {hospital.address.landmark}
+              <br />
+              {hospital.address.city}, {hospital.address.region}
+            </p>
+            <a
+              href={mapsDirections}
+              className="mt-4 inline-block text-sm font-semibold text-primary underline underline-offset-4"
+            >
+              Google Maps directions
+            </a>
+          </div>
+          <div className="rounded-3xl bg-card p-6 ring-1 ring-foreground/10">
+            <h2 className="font-heading text-2xl">Phone & WhatsApp</h2>
+            <p className="mt-3">
+              <a className="text-xl font-semibold" href={`tel:${hospital.phoneTel}`}>
+                {hospital.phoneDisplay}
+              </a>
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground">{hospital.hours}</p>
+            <p className="mt-2 text-sm text-muted-foreground">{hospital.clinicHours}</p>
+          </div>
+        </div>
+        <div className="overflow-hidden rounded-3xl ring-1 ring-foreground/10">
+          <iframe
+            title="Map of Ruqayya Medical Center"
+            src={mapsEmbed}
+            className="h-[28rem] w-full border-0"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}

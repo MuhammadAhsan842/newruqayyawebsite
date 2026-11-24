@@ -1,0 +1,273 @@
+export const hospital = {
+  name: "Ruqayya Medical Center",
+  shortName: "RMC",
+  tagline: "Trusted care, close to home.",
+  urduLine: "آپ کے قریب، معتبر طبی دیکھ بھال",
+  description:
+    "Ruqayya Medical Center is a trusted multi-specialty hospital in Nespak Housing Scheme, Lahore. We provide accessible, patient-centered care with modern diagnostics, surgical facilities, 24/7 emergency cover, and experienced specialists.",
+  address: {
+    line1: "103-C2, Sutlej Avenue",
+    line2: "Nespak Housing Scheme, Block C-2",
+    landmark: "Near Ghazi Chowk",
+    city: "Lahore",
+    region: "Punjab",
+    country: "Pakistan",
+    postalCode: "54770",
+    mapsQuery: "Ruqayya Medical Center, Nespak Housing Scheme, Lahore",
+    lat: 31.438414,
+    lng: 74.285817,
+  },
+  phoneDisplay: "0300 9400020",
+  phoneTel: "+923009400020",
+  whatsapp: "923009400020",
+  hours: "Open 24 hours — emergency and critical care never close",
+  clinicHours:
+    "Specialist clinics run on posted schedules. Reception confirms the next available slot.",
+} as const;
+
+export const nav = [
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/doctors", label: "Doctors" },
+  { href: "/appointments", label: "Appointments" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Visit us" },
+] as const;
+
+export type Service = {
+  slug: string;
+  title: string;
+  summary: string;
+  details: string[];
+  audience: string;
+};
+
+export const services: Service[] = [
+  {
+    slug: "emergency",
+    title: "24/7 Emergency & Critical Care",
+    summary:
+      "Walk in at any hour. Stabilisation, urgent assessment, and admission pathways without waiting for weekday clinic hours.",
+    details: [
+      "Round-the-clock emergency desk and on-call clinical cover",
+      "Rapid assessment for trauma, chest pain, breathing difficulty, and acute medical illness",
+      "Critical-care support with a path to inpatient beds when needed",
+      "Direct phone line so families in Nespak and Township can reach us before they arrive",
+    ],
+    audience: "Families who need a hospital they can reach at 2 a.m., not only at 2 p.m.",
+  },
+  {
+    slug: "outpatient",
+    title: "Outpatient Clinics",
+    summary:
+      "Same-building OPD for medicine, surgery, gynecology, and psychology — so follow-up does not mean a city-wide commute.",
+    details: [
+      "Scheduled specialist clinics with reception-managed appointments",
+      "Walk-in OPD for general complaints during posted hours",
+      "Continuity of care: labs, pharmacy, and review in one place",
+      "Clear next-visit instructions before you leave the desk",
+    ],
+    audience: "Residents of Nespak, Township, and nearby societies who want local specialists.",
+  },
+  {
+    slug: "surgery",
+    title: "General & Laparoscopic Surgery",
+    summary:
+      "Elective and urgent surgery led by Prof. Dr. Mohammad Akmal Shafiq, including minimally invasive laparoscopic procedures.",
+    details: [
+      "Hernia, gallbladder, thyroid, breast, and abdominal surgery",
+      "Laparoscopic (keyhole) options where clinically appropriate",
+      "Pre-operative assessment and post-operative follow-up on site",
+      "Emergency surgical cover coordinated with the 24/7 desk",
+    ],
+    audience: "Patients who want an experienced FCPS surgeon without travelling across Lahore.",
+  },
+  {
+    slug: "gynecology",
+    title: "Gynecology",
+    summary:
+      "Women’s health clinics with Dr. Shazia Ali — antenatal care, gynecologic consultation, and discreet evening hours.",
+    details: [
+      "Antenatal visits, menstrual and fertility-related concerns, and routine women’s health",
+      "Evening clinics designed for working women and families",
+      "Coordination with diagnostics and pharmacy in the same building",
+      "Respectful, private consultation rooms",
+    ],
+    audience: "Women who prefer a neighbourhood hospital over a downtown waiting lounge.",
+  },
+  {
+    slug: "medicine",
+    title: "General Medicine",
+    summary:
+      "Adult medicine for diabetes, blood pressure, infections, chest complaints, and everyday illness — with time to explain the plan.",
+    details: [
+      "Chronic disease follow-up and acute medical care",
+      "Health checks and investigation review",
+      "Referral into surgery, gynecology, or psychology when needed",
+      "Evening clinic access with Dr. Waseem Iqbal",
+    ],
+    audience: "Adults who need a physician they can return to, not a one-off counter visit.",
+  },
+  {
+    slug: "psychology",
+    title: "Psychology",
+    summary:
+      "Clinical psychology with Ms. Najma Badar for anxiety, depression, family strain, and confidence — treated as healthcare, not a last resort.",
+    details: [
+      "Confidential sessions for adults and families",
+      "Support for anxiety, low mood, stress, and relationship concerns",
+      "Coordination with medical teams when symptoms overlap with physical illness",
+      "Appointments that respect privacy at reception",
+    ],
+    audience: "People who want mental health care inside a trusted medical center.",
+  },
+  {
+    slug: "diagnostics",
+    title: "Diagnostics",
+    summary:
+      "On-site investigations so treatment decisions do not wait on a second trip across the city.",
+    details: [
+      "Laboratory and diagnostic support for OPD and emergency",
+      "Results routed back to the treating doctor",
+      "Pre-operative work-up for surgical patients",
+      "Ask reception which tests are available the same day",
+    ],
+    audience: "Patients who need answers before they leave the building.",
+  },
+  {
+    slug: "pharmacy",
+    title: "On-site Pharmacy",
+    summary:
+      "Dispense before you go home. Emergency patients and clinic visitors can collect prescribed medicines on the same visit.",
+    details: [
+      "In-house pharmacy for inpatient and outpatient prescriptions",
+      "Staff who can check the script against the clinic note",
+      "Open to support 24/7 hospital operations",
+    ],
+    audience: "Anyone who should not have to hunt for a late-night pharmacy after discharge.",
+  },
+  {
+    slug: "online-consultation",
+    title: "Online Consultations",
+    summary:
+      "Video or phone review with our specialists when travel is difficult — follow-ups, second opinions, and first advice.",
+    details: [
+      "Book an online slot through WhatsApp or the appointment form",
+      "Share previous reports before the call when you have them",
+      "Escalate to an in-person visit if the doctor advises examination",
+      "Same specialists you would see in clinic — not an anonymous call centre",
+    ],
+    audience: "Patients outside Lahore, or families who need a first conversation tonight.",
+  },
+];
+
+export type Doctor = {
+  slug: string;
+  name: string;
+  honorific: string;
+  specialty: string;
+  credentials: string;
+  experience: string;
+  clinic: string;
+  bio: string;
+  focus: string[];
+};
+
+export const doctors: Doctor[] = [
+  {
+    slug: "prof-dr-mohammad-akmal-shafiq",
+    name: "Prof. Dr. Mohammad Akmal Shafiq",
+    honorific: "Professor of Surgery",
+    specialty: "General & Laparoscopic Surgeon",
+    credentials: "MBBS (King Edward Medical University), FCPS (Surgery)",
+    experience: "30+ years",
+    clinic: "Typically afternoon surgical clinic; confirm the day’s list with reception.",
+    bio: "Professor Shafiq is the surgical anchor of Ruqayya Medical Center. Patients across Lahore know him for hernia, gallbladder, thyroid, breast, and laparoscopic work — and for a calm explanation of what the operation will actually involve.",
+    focus: [
+      "Laparoscopic and open general surgery",
+      "Hernia, gallbladder, thyroid, and breast procedures",
+      "Emergency surgical assessment",
+    ],
+  },
+  {
+    slug: "dr-shazia-ali",
+    name: "Dr. Shazia Ali",
+    honorific: "Consultant",
+    specialty: "Gynecologist",
+    credentials: "MBBS, MCPS, FCPS",
+    experience: "15+ years",
+    clinic: "Evening clinics, typically 7:30–9:30 pm, Monday to Friday.",
+    bio: "Dr. Shazia Ali provides women’s health care in the hours many working patients can actually attend. Her practice covers antenatal care, gynecologic consultation, and ongoing women’s health in a private clinic setting.",
+    focus: [
+      "Antenatal and gynecologic consultation",
+      "Women’s health follow-up",
+      "Evening appointments for working families",
+    ],
+  },
+  {
+    slug: "dr-waseem-iqbal",
+    name: "Dr. Waseem Iqbal",
+    honorific: "Consultant",
+    specialty: "General Medicine",
+    credentials: "MBBS",
+    experience: "Physician in adult medicine",
+    clinic: "Evening medicine clinic; reception will confirm today’s hours.",
+    bio: "Dr. Waseem Iqbal sees adult medical patients for everyday illness and longer-term conditions — fever, chest complaints, diabetes, blood pressure, and the investigations that should sit behind a clear plan.",
+    focus: [
+      "Adult general medicine",
+      "Chronic disease follow-up",
+      "Acute medical assessment",
+    ],
+  },
+  {
+    slug: "ms-najma-badar",
+    name: "Ms. Najma Badar",
+    honorific: "Clinical Psychologist",
+    specialty: "Psychology",
+    credentials: "BS Clinical Psychology, MS Clinical Psychology",
+    experience: "9+ years",
+    clinic: "By appointment — ask reception for the next psychology slot.",
+    bio: "Ms. Najma Badar offers clinical psychology inside a medical center, so mental health is treated with the same seriousness as a surgical or medical visit. Sessions are confidential and appointment-based.",
+    focus: [
+      "Anxiety, low mood, and stress",
+      "Family and confidence-related concerns",
+      "Confidential, appointment-only care",
+    ],
+  },
+  {
+    slug: "dr-faisal",
+    name: "Dr. Faisal",
+    honorific: "Consultant",
+    specialty: "Specialist Consultant",
+    credentials: "On the Ruqayya Medical Center consultant panel",
+    experience: "Ask reception for current clinic days",
+    clinic: "Confirm specialty clinic timing with the front desk when you book.",
+    bio: "Dr. Faisal consults at Ruqayya Medical Center as part of the specialist team. Reception will match you to the right clinic and tell you which documents to bring.",
+    focus: [
+      "Consultant clinic at RMC",
+      "In-person and, where offered, online review",
+      "Coordinated care with diagnostics and pharmacy",
+    ],
+  },
+];
+
+export function getService(slug: string) {
+  return services.find((s) => s.slug === slug);
+}
+
+export function getDoctor(slug: string) {
+  return doctors.find((d) => d.slug === slug);
+}
+
+export function whatsappLink(message: string) {
+  return `https://wa.me/${hospital.whatsapp}?text=${encodeURIComponent(message)}`;
+}
+
+export const defaultWhatsappMessage =
+  "Assalamualaikum, I would like to book an appointment at Ruqayya Medical Center.";
+
+export const mapsDirections = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+  hospital.address.mapsQuery
+)}`;
+
+export const mapsEmbed = `https://maps.google.com/maps?q=${hospital.address.lat},${hospital.address.lng}&z=16&output=embed`;
