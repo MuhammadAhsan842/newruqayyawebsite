@@ -2,6 +2,7 @@ import { hospital, mapsDirections, mapsEmbed } from "@/lib/hospital";
 import { photos } from "@/lib/photos";
 import { FacilityImage } from "@/components/facility-image";
 import { HafizMedicos } from "@/components/hafiz-medicos";
+import { LabPartnership } from "@/components/lab-partnership";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta(
@@ -37,6 +38,9 @@ export default function ContactPage() {
           sizes="100vw"
           className="aspect-[4/3]"
         />
+      </div>
+      <div className="mt-12">
+        <LabPartnership />
       </div>
       <div className="mt-10 grid gap-8 lg:grid-cols-2">
         <div className="space-y-6">

@@ -27,6 +27,19 @@ export const hospital = {
     "Specialist clinics run on posted schedules. Reception confirms the next available slot.",
 } as const;
 
+export const labPartner = {
+  name: "Chughtai Lab",
+  url: "https://chughtailab.com/",
+  role: "Pathology collection partner",
+  plaque: "Chughtai Lab collection centre — the plaque on our reception wall",
+  line: "The sample is taken at our granite desk. The report is Chughtai Lab’s. You do not leave Nespak for a vial, and families already know the name on the report.",
+  points: [
+    { t: "Collected here", d: "Phlebotomy at reception, under the same Ruqayya mark as the clinics." },
+    { t: "Reported by Chughtai", d: "Pathology goes through Chughtai Lab — a national network, not a nameless counter." },
+    { t: "Back to your doctor", d: "Results return to the specialist who asked for them, in this building." },
+  ],
+} as const;
+
 export const nav = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },

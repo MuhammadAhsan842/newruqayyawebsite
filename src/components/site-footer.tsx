@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { hospital, nav, services } from "@/lib/hospital";
+import { hospital, labPartner, nav, services } from "@/lib/hospital";
+import { BrandLockup } from "@/components/lab-partnership";
 
 export function SiteFooter() {
   return (
@@ -75,6 +76,16 @@ export function SiteFooter() {
               </Link>
             </li>
           </ul>
+        </div>
+      </div>
+      <div className="border-t border-primary-foreground/15">
+        <div className="mx-auto max-w-6xl px-4 py-8">
+          <p className="text-center text-[11px] font-semibold tracking-[0.2em] text-primary-foreground/70 uppercase">
+            {labPartner.role}
+          </p>
+          <div className="mx-auto mt-5 max-w-3xl rounded-3xl bg-primary-foreground p-6">
+            <BrandLockup />
+          </div>
         </div>
       </div>
       <div className="border-t border-primary-foreground/15">

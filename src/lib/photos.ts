@@ -18,6 +18,15 @@ export const photos = {
     width: 1448,
     height: 1086,
   },
+  receptionPartnership: {
+    id: "reception-partnership",
+    src: "/media/reception-partnership.jpg",
+    alt: "Reception wall at Ruqayya Medical Center: Ruqayya Medical Center mark beside the Chughtai Lab collection-centre plaque",
+    caption: "The two names on the wall — Ruqayya Medical Center and Chughtai Lab, at the same desk.",
+    place: "Lab partner",
+    width: 700,
+    height: 320,
+  },
   reception: {
     id: "reception",
     src: "/media/reception.jpg",

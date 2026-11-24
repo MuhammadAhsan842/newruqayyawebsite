@@ -1,6 +1,7 @@
 import { FacilityGallery } from "@/components/facility-gallery";
 import { FacilityImage } from "@/components/facility-image";
 import { DigitalXray } from "@/components/digital-xray";
+import { LabPartnership } from "@/components/lab-partnership";
 import { photos } from "@/lib/photos";
 import { pageMeta } from "@/lib/seo";
 
@@ -39,6 +40,9 @@ export default function InsidePage() {
           the OPD waiting area, the digital X-ray lab, Hafiz Medicos on the
           ground floor, and the ward before you arrive.
         </p>
+        <div className="mt-12">
+          <LabPartnership />
+        </div>
         <div className="mt-12">
           <DigitalXray />
         </div>

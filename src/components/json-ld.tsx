@@ -1,4 +1,4 @@
-import { doctors, hospital, services } from "@/lib/hospital";
+import { doctors, hospital, labPartner, services } from "@/lib/hospital";
 import { photos } from "@/lib/photos";
 
 export function JsonLd() {
@@ -39,6 +39,12 @@ export function JsonLd() {
       name: s.title,
       description: s.summary,
     })),
+    partner: {
+      "@type": "MedicalOrganization",
+      name: labPartner.name,
+      url: labPartner.url,
+      description: labPartner.line,
+    },
     employee: doctors.map((d) => ({
       "@type": "Physician",
       name: d.name,

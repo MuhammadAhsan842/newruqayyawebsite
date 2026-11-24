@@ -4,6 +4,7 @@ import { getService, services } from "@/lib/hospital";
 import { AppointmentForm } from "@/components/appointment-form";
 import { HafizMedicos } from "@/components/hafiz-medicos";
 import { DigitalXray } from "@/components/digital-xray";
+import { LabPartnership } from "@/components/lab-partnership";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { pageMeta } from "@/lib/seo";
@@ -68,7 +69,8 @@ export default async function ServicePage({
         <AppointmentForm presetService={service.title} />
       </div>
       {slug === "diagnostics" ? (
-        <div className="mt-12">
+        <div className="mt-12 space-y-12">
+          <LabPartnership />
           <DigitalXray showLink={false} />
         </div>
       ) : null}

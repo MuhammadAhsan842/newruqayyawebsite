@@ -43,6 +43,8 @@ export const metadata: Metadata = {
     "laparoscopic surgeon Lahore",
     "gynecologist Nespak",
     "24/7 hospital Lahore",
+    "Chughtai Lab Nespak",
+    "Chughtai Lab collection centre Lahore",
   ],
   openGraph: {
     type: "website",

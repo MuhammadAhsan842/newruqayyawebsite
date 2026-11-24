@@ -12,6 +12,7 @@ import { FacilityImage } from "@/components/facility-image";
 import { DoctorPortrait } from "@/components/doctor-portrait";
 import { HafizMedicos } from "@/components/hafiz-medicos";
 import { DigitalXray } from "@/components/digital-xray";
+import { LabPartnership } from "@/components/lab-partnership";
 import { FacilityGallery } from "@/components/facility-gallery";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -107,7 +108,7 @@ export default function Home() {
           {[
             ["24/7", "Emergency desk never closes"],
             ["Named specialists", "Surgery, ortho, gynae, skin, medicine"],
-            ["One building", "Clinics, digital X-ray, lab, Hafiz Medicos"],
+            ["One building", "Clinics, digital X-ray, Chughtai Lab, Hafiz Medicos"],
             ["Two ways in", "Walk in or consult online"],
           ].map(([k, v]) => (
             <div key={k}>
@@ -119,28 +120,27 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16">
-        <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <p className="text-xs font-semibold tracking-[0.2em] text-gold-foreground uppercase">
-              Arrival
-            </p>
-            <h2 className="mt-3 font-heading text-4xl text-ink">
-              You do not guess the door. The desk is granite, the name is on the wall.
-            </h2>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
-              Reception sits under the Ruqayya Medical Center mark. Prof. Dr.
-              Waseem Iqbal’s clinic is the first door on the left. Chughtai Lab
-              collects here. If it is an emergency, say so — they will not send
-              you to a booking form.
-            </p>
-            <Link
-              href="/inside"
-              className={cn(buttonVariants({ variant: "outline" }), "mt-6 h-11 px-5")}
-            >
-              See inside the center
-            </Link>
-          </div>
+        <div className="max-w-2xl">
+          <p className="text-xs font-semibold tracking-[0.2em] text-gold-foreground uppercase">
+            Arrival
+          </p>
+          <h2 className="mt-3 font-heading text-4xl text-ink">
+            You do not guess the door. The desk is granite, both names are on the wall.
+          </h2>
+          <p className="mt-4 leading-relaxed text-muted-foreground">
+            Reception sits under the Ruqayya Medical Center mark. Prof. Dr.
+            Waseem Iqbal’s clinic is the first door on the left. Chughtai Lab
+            collects on the right. If it is an emergency, say so — they will
+            not send you to a booking form.
+          </p>
+          <Link
+            href="/inside"
+            className={cn(buttonVariants({ variant: "outline" }), "mt-6 h-11 px-5")}
+          >
+            See inside the center
+          </Link>
         </div>
+        <LabPartnership className="mt-12" />
       </section>
 
       <section className="bg-cream py-16">
